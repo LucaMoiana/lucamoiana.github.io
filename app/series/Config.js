@@ -12,7 +12,7 @@ define([],
 				// If your map has time properties, choose to show a single time instance instead of the time interval saved with the web map.
 				showSingleTimeInstance: false
 			},{
-				id: "197ce84cb3df4b838aa4cca757383ba3",
+				id: "c5a24d096c5a46f98e4d8e3f5b1bdf1f",
 				title: "",
 				// If your map has time properties, choose to show a single time instance instead of the time interval saved with the web map.
 				showSingleTimeInstance: false
