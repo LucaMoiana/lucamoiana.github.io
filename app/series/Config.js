@@ -41,9 +41,9 @@ define([],
 			//	}
 			],
 			//Enter a title, if no title is specified, the first webmap's title is used.
-			title: "Add a title here",
+			title: "Dalla carta al web-gis",
 			//Enter a subtitle, if no subtitle is specified, the first webmap's subtitle is used.
-			subtitle: "Add a subtitle here",
+			subtitle: "un viaggio nella cartografia storica, attraverso esri",
 			// If false, each tab will have a number on it. If true, the first tab will not have a number and the second tab will start counting at 1.
 			startCountOnSecondTab: false,
 			//Sync maps scale and location
