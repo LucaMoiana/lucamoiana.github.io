@@ -21,7 +21,7 @@ define([],
 				id: "ad70e61d267a4db8a69f7decd76873d3",
 				title: "",
 				// If your map has time properties, choose to show a single time instance instead of the time interval saved with the web map.
-				showSingleTimeInstance: false
+				showSingleTimeInstance: true
 			}
 			// To add additional maps to the template, uncomment the below section for
 			// each map you would like to add. Webmap titles from ArcGIS Online will
