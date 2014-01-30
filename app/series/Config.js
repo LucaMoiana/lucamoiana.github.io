@@ -26,13 +26,14 @@ define([],
 			// To add additional maps to the template, uncomment the below section for
 			// each map you would like to add. Webmap titles from ArcGIS Online will
 			// be used unless you fill in title attribute.
-			//, {
-			//
-			//	id: "739db23c3f674005a405c68e337f5011",
-			//	title: "",
-			//	// If your map has time properties, choose to show a single time instance instead of the time interval saved with the web map.
-			//	showSingleTimeInstance: false
-			//	},{
+			, {
+			
+				id: "197ce84cb3df4b838aa4cca757383ba3",
+				title: "",
+				// If your map has time properties, choose to show a single time instance instead of the time interval saved with the web map.
+				showSingleTimeInstance: false
+				},
+			//	{
 			//
 			//	id: "739db23c3f674005a405c68e337f5011",
 			//	title: "",
