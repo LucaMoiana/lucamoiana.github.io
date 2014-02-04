@@ -20,6 +20,7 @@
 <script>
 var map = L.mapbox.map('map', 'lucamoiana.map-wh4s1tnz')
     .setView([0, 0], 3);
+    map.centerzoom({ lat: 38.9, lon: -77.03 }, 5);
 
 /* // add a new line to the map, but one with no points - yet
 var polyline = L.polyline([]).addTo(map);
