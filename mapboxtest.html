@@ -20,6 +20,13 @@
 <script>
 var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
     .setView([45.649, 8.946], 14);
+    
+// add a new line to the map, but one with no points - yet
+var polyline = L.polyline([]).addTo(map);
+
+// keep a tally of how many points we've added to the map
+var pointsAdded = 0;
+
 </script>
 
 
