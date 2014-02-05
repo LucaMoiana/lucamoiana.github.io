@@ -19,6 +19,19 @@
 var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
     .setView([38.89399, -77.03659], 17);
 
+// Define circle options
+// http://leafletjs.com/reference.html#circle
+var circle_options = {
+    color: '#fff',      // Stroke color
+    opacity: 1,         // Stroke opacity
+    weight: 10,         // Stroke weight
+    fillColor: '#000',  // Fill color
+    fillOpacity: 0.6    // Fill opacity
+};
+
+var circle_one = L.circle([38.89415, -77.03738], 20, circle_options).addTo(map);
+var circle_two = L.circle([38.89415, -77.03578], 20, circle_options).addTo(map);
+
 // Create array of lat,lon points
 var line_points = [
     [38.893596444352134, -77.0381498336792],
