@@ -20,6 +20,41 @@
 <script>
 var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
     .setView([45.649, 8.946], 14);
+    
+
+// Create array of lat,lon points
+var line_points = [
+[
+            8.97068090736866,
+            45.65694088116288,
+            240.39999389648438
+          ],
+          [
+            8.970648385584354,
+            45.65698572434485,
+            240.1999969482422
+          ],
+          [
+            8.970669256523252,
+            45.65700785256922,
+            240.1999969482422
+          ],
+          [
+            8.97083479911089,
+            45.65721203573048,
+            240.1999969482422
+          ],
+          [
+            8.971006879583001,
+            45.65742057748139,
+            239.8000030517578
+          ]
+
+// Define polyline options
+// http://leafletjs.com/reference.html#polyline
+var polyline_options = {
+    color: '#000'
+};
 
 
 </script>
