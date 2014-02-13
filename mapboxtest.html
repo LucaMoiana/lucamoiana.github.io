@@ -953,7 +953,7 @@ for (var i = 0; i < line_points.length; i++)
 	var entry = line_points[i];
 	draw_points.push(entry);
 	
-	setTimeout(function() {var polyline = L.polyline(draw_points, polyline_options).addTo(map);}, 1000*i);
+	var polyline = L.polyline(draw_points, polyline_options).addTo(map);
 	};
 
 
