@@ -9,12 +9,14 @@
 <body>
 <div id='map'></div>
 <script>
+// Create a map and center
+
 var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
     .setView([45.649, 8.946], 14);
 
 // Create array of lat,lon points
 var line_points = [
-    [45.656941, 8.970681],
+[45.656941, 8.970681],
 [45.656986, 8.970648],
 [45.657008, 8.970669],
 [45.657212, 8.970835],
@@ -943,14 +945,14 @@ var polyline_options = {
     color: '#000'
 };
 
-//create a new array to get the animation
-
+//create an empty array to loop
 var draw_points = [];
 
-for (var i = 0; i < line_points.length; i++) {
+for (var i = 0; i < line_points.length; i++)
+	{
   var entry = line_points[i];
   draw_points.push(entry);
-  polyline = L.polyline(draw_points, polyline_options;
+  polyline = L.polyline(draw_points, polyline_options);
    };
 
 // Defining a polygon here instead of a polyline will connect the
