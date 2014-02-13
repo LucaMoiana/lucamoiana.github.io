@@ -942,18 +942,19 @@ var line_points = [
 // Define polyline options
 // http://leafletjs.com/reference.html#polyline
 var polyline_options = {
-    color: ' #ff69b4'
+    color: '#000'
 };
 
 //create an empty array to loop
 var draw_points = [];
 
-for (var i = 0; i < line_points.length; i++)
+var timeoutID = window.setTimeout(for (var i = 0; i < line_points.length; i++)
 	{
 	var entry = line_points[i];
 	draw_points.push(entry);
-	var timeoutID = window.setTimeout(L.polyline(draw_points, polyline_options).addTo(map), 1000);
-	};
+	
+	var polyline = L.polyline(draw_points, polyline_options).addTo(map);
+	}, 1000);
 
 //var polyline = L.polyline(line_points, polyline_options).addTo(map);
 
