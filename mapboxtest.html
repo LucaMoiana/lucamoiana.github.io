@@ -64,8 +64,8 @@
 <ul id='map-ui'></ul>
 <div id='map'></div>
 <script>
-var map = L.mapbox.map('map', 'examples.map-zr0njcqy')
-    .setView([45.649, 8.946], 14);
+
+var map = L.mapbox.map('map').setView([45.649, 8.946], 14);
 var ui = document.getElementById('map-ui');
 
 addLayer(L.mapbox.tileLayer('lucamoiana.hloc8el3'), '6Km', 1);
