@@ -70,7 +70,7 @@
 
 var map = L.map('map','lucamoiana.hm3p5lg6').setView([45.642, 8.954], 14);
 var ui = document.getElementById('map-ui');
-
+addLayer(L.mapbox.tileLayer('lucamoiana.hm3p5lg6'));
 addLayer(L.mapbox.tileLayer('lucamoiana.MdR2014'), '6 KM', 3);
 addLayer(L.mapbox.tileLayer('lucamoiana.medio_2014'), '14 KM', 2);
 addLayer(L.mapbox.tileLayer('lucamoiana.lungo_2014'), '20 KM', 1);
