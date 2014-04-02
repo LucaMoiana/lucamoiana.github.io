@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset=utf-8 />
-<title>5 Maratonina del Rugareto</title>
+<title>Layers</title>
 
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
@@ -14,6 +14,8 @@
 </style>
 </head>
 <body>
+
+
 <style>
 #map-ui {
     position: absolute;
@@ -61,55 +63,48 @@
     color: #FFF;
 }
 </style>
- <ul id='map-ui'></ul>
-    <div id='map'></div>
-       <script>
-    //examples.map-20v6611k grey
-        var map = L.mapbox.map('map', 'lucamoiana.hm3p5lg6').setView([45.642, 8.954], 14);
-        var ui = document.getElementById('map-ui');
+<ul id='map-ui'></ul>
+<div id='map'></div>
+<script>
+var map = L.map('map').setView([38.902, -77.001], 13);
+var ui = document.getElementById('map-ui');
 
-		var cortoLayer = L.mapbox.tileLayer('lucamoiana.MdR2014');
-        var medioLayer = L.mapbox.tileLayer('lucamoiana.medio_2014');
-        var lungoLayer = L.mapbox.tileLayer('lucamoiana.lungo_2014');
-        
-        addLayer(cortoLayer, L.mapbox.gridLayer('lucamoiana.MdR2014'), 'Corto 6Km', 3);
-        addLayer(medioLayer, L.mapbox.gridLayer('lucamoiana.medio_2014'), 'Medio 14Km', 2);
-        addLayer(lungoLayer, L.mapbox.gridLayer('lucamoiana.lungo_2014'), 'Lungo 20Km', 1);
-        
+addLayer(L.mapbox.tileLayer('examples.map-zgrqqx0w'), 'Base Map', 1);
+addLayer(L.mapbox.tileLayer('examples.bike-lanes'), 'Bike Lanes', 2);
+addLayer(L.mapbox.tileLayer('examples.bike-locations'), 'Bike Stations', 3);
 
+function addLayer(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex)
+        .addTo(map);
 
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
 
-        function addLayer(gridlayer, name, zIndex) {
-            layer.setZIndex(zIndex)
-                .addTo(map);
-                    // add the gridControl to the active gridlayer
-    var gridControl = L.mapbox.gridControl(gridlayer, {follow: false}).addTo(map);
+    link.href = '#';
+    link.className = 'active';
+    link.innerHTML = name;
 
-            // Create a simple layer switcher that toggles layers on
-            // and off.
-            var item = document.createElement('li');
-            var link = document.createElement('a');
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-            link.href = '#';
-            link.className = 'active';
-            link.innerHTML = name;
-
-            link.onclick = function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                if (map.hasLayer(layer)) {
-                    map.removeLayer(layer);
-                    this.className = '';
-                } else {
-                    map.addLayer(layer);
-                    this.className = 'active';
-                }
-            };
-
-            item.appendChild(link);
-            ui.appendChild(item);
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = '';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active';
         }
-    </script>
+    };
+
+    item.appendChild(link);
+    ui.appendChild(item);
+}
+</script>
+
+
 </body>
 </html>
