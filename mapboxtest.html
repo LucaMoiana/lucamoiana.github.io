@@ -63,23 +63,27 @@
 </style>
  <ul id='map-ui'></ul>
     <div id='map'></div>
-    <script>
+       <script>
+    //examples.map-20v6611k grey
         var map = L.mapbox.map('map', 'lucamoiana.hm3p5lg6').setView([45.642, 8.954], 14);
         var ui = document.getElementById('map-ui');
 
-
+		var cortoLayer = L.mapbox.tileLayer('lucamoiana.MdR2014');
+        var medioLayer = L.mapbox.tileLayer('lucamoiana.medio_2014');
+        var lungoLayer = L.mapbox.tileLayer('lucamoiana.lungo_2014');
         
-        addLayer(L.mapbox.tileLayer('lucamoiana.hmah7c05'), 'Parcheggio', 4);
-        addLayer(L.mapbox.tileLayer('lucamoiana.MdR2014'), 'Corto 6Km', 3);
-        addLayer(L.mapbox.tileLayer('lucamoiana.medio_2014'), 'Medio 14Km', 2);
-        addLayer(L.mapbox.tileLayer('lucamoiana.lungo_2014'), 'Lungo 20Km', 1);
+        addLayer(cortoLayer, L.mapbox.gridLayer('lucamoiana.MdR2014'), 'Corto 6Km', 3);
+        addLayer(medioLayer, L.mapbox.gridLayer('lucamoiana.medio_2014'), 'Medio 14Km', 2);
+        addLayer(lungoLayer, L.mapbox.gridLayer('lucamoiana.lungo_2014'), 'Lungo 20Km', 1);
         
 
 
 
-        function addLayer(layer, name, zIndex) {
+        function addLayer(gridlayer, name, zIndex) {
             layer.setZIndex(zIndex)
                 .addTo(map);
+                    // add the gridControl to the active gridlayer
+    var gridControl = L.mapbox.gridControl(gridlayer, {follow: false}).addTo(map);
 
             // Create a simple layer switcher that toggles layers on
             // and off.
