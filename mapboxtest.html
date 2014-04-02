@@ -69,9 +69,9 @@
 var map = L.map('map', 'lucamoiana.hm3p5lg6').setView([45.642, 8.954], 14);
 var ui = document.getElementById('map-ui');
 
-addLayer(L.mapbox.tileLayer('examples.map-zgrqqx0w'), 'Base Map', 1);
-addLayer(L.mapbox.tileLayer('examples.bike-lanes'), 'Bike Lanes', 2);
-addLayer(L.mapbox.tileLayer('examples.bike-locations'), 'Bike Stations', 3);
+addLayer(L.mapbox.tileLayer('lucamoiana.MdR2014'), '6 KM', 1);
+addLayer(L.mapbox.tileLayer('lucamoiana.medio_2014'), '14 KM', 2);
+addLayer(L.mapbox.tileLayer('lucamoiana.lungo_2014'), '20 KM', 3);
 
 function addLayer(layer, name, zIndex) {
     layer
