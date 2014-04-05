@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Dal catasto napoleonico al webGIS</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide" id="Titolo">
+            <h1>Sistema informativo geo-storico della Franciacorta <br>(1807-09)</h1>
+    </section>
+
+    <section class="slide" id="INDICE">
+      <h2>INDICE</h2>
+       <ol>
+          <a href=”#”><li></a>Modalità comunicativa</li>
+          <li>Il progetto</li>
+          <li>Ambito territoriale d'indagine</li>
+          <li>Note storiche</li>
+          <li>I catasti storici e la loro valenza storico-ricostruttiva</li>
+          <li>Il catasto napoleonico</li>
+          <li>L'apparato cartografico</li>
+          <li>Il registro fondiario (sommarione)</li>
+          <li>Le fasi di implementazione del sistema informativo geo-storico (link all'App)</li>
+          <li>Acquisizione del materiale archivistico</li>
+          <li>Georeferenziazione della mappe</li>
+          <li>Digitalizzazione delle mappe</li>
+          <li>Data-entry dei dati censuari dai registri</li>
+          <li>Normalizzazione dei dati e integrazione con la base dati geografica in logica GIS</li>
+          <li>Esito mediatico e sviluppi</li>
+      </ol>
+    </section>
+
+    <section class="slide" id="MODALITÀ-COMUNICATIVA">
+      <h2>MODALITÀ COMUNICATIVA</h2>
+      <p>Obiettivo del presente Live Poster è quello di presentare, tramite un focus su una porzione territoriale estratta dall'intero sistema prodotto, l'esito di un progetto di ricerca e informatizzazione della prima, e tra le più importanti, fonti archivistiche per la storia del paesaggio agrario dei territori della Lombardia ex-veneta: il catasto napoleonico.
+L'esposizione è pensata in chiave didattica e muove da una breve illustrazione della fonte storica utilizzata per passare a descrivere, in modo discorsivo, le varie fasi di implementazione che hanno portato alla realizzazione del sistema informativo geo-storico, di cui il focus territoriale proposto rappresenta uno specimen.
+Gli "strumenti" utilizzati in questo Live Poster sono di tre tipi: accanto al WebGIS rappresentato dalla mappa (esito mediatico privilegiato tra quelli previsti per valorizzare il progetto) e alla relativa descrizione associata, alla quale viene affidata la funzione esplicativa degli step lavorativi, è stata sviluppata una web map esterna attraverso la quale si vuole proporre una sintesi, corredata da riferimenti diretti alle funzionalità del software utilizzato (ArcGIS basic), dei passaggi logico-tecnici più importanti.
+	</p>
+	</section>
+      
+    <section class="slide" id="IL_PROGETTO">
+      <h2>IL PROGETTO</h2>
+		<p>Obiettivo del progetto, concluso, è stato quello trasferire i contenuti informativi della fonte dal supporto cartaceo ad un moderno sistema informativo geografico, allo scopo di massimizzarne lo sfruttamento ai fini della ricerca. La scelta del GIS, per tutte le fasi di implementazione del progetto, dalla georeferenziazione dei materiali cartografici alla produzione di elaborati tematici, è stata suggerita, come si vedrà, dalla tipologia e dalla struttura informativa della documentazione utilizzata. Grazie all’utilizzo di questa metodologia, la fonte catastale ottocentesca si rende disponibile in una forma che permette di accostarsi ai suoi contenuti cartografici e descrittivi in maniera più efficiente, per indagini mirate e approfondimenti sull'uso del suolo in ambito agricolo e urbano, sulla toponomastica, sul sistema infrastrutturale storico del paesaggio e sulla proprietà immobiliare.
+La georeferenziazione delle basi catastali ottocentesche sulla cartografia ufficiale odierna, in primo luogo il catasto vigente, consente di effettuare utili raffronti con l'attualità relativamente a tutti i dati storico-agronomici ricavabili dalla fonte, ed in ordine allo sviluppo urbanistico dei centri abitati.
+Il progetto, che, nel panorama degli studi locali, si propone come un innovativo approccio alla cultura del territorio, costituisce un utile strumento di lavoro per professionisti e studiosi, che, grazie al sistema, possono disporre dell’intera base dati geografica catastale di tutto il territorio franciacortino per un’ampia casistica di impieghi, dalla ricerca storica ad utilizzi più direttamente legati ad esigenze amministrative (studi di piano, odonomastica etc.).
+Il progetto “Sistema informativo geo-storico della Franciacorta” muove da questi obiettivi, e mira ricostruire, attraverso i rilievi delle registrazioni catastali di inizio Ottocento, la consistenza storica di un territorio in trasformazione, nella speranza di fornire uno strumento conoscitivo che possa contribuire alla sua salvaguardia.
+            <img src="http://www.paolooscar.com/image/LP_Comprensorio_rev.jpg" alt="Figura 1">
+		</p>
+    </section>
+                   
+    <section class="slide" id="AMBITO TERRITORIALE D'INDAGINE">
+     <h2>AMBITO TERRITORIALE D'INDAGINE</h2>
+      	<p>L’area interessata dall’indagine è definita dai limiti del comprensorio vitivinicolo della Franciacorta: un territorio di oltre 200 kmq che coinvolge 19 comuni amministrativi attuali, tutti bresciani. Per i comuni ricompresi solo in parte (Cologne, Coccaglio, Rovato, Cazzago S. Martino e Brescia) l’analisi è stata limitata alla parte che ricade entro i limiti anzidetti. Rimangono altresì escluse alcune porzioni territoriali dei comuni di Capriolo, Paratico e Iseo, in quanto “non vocate”, e le eccedenze territoriali dei comuni storici di Adro, Erbusco, Passirano, Rodengo e Gussago, all’epoca più estesi di quelli attuali. Al momento della realizzazione del catasto, i comuni amministrativi erano 26, distribuiti su cinque Cantoni di due distinti Distretti (I° di Brescia e II° di Chiari) del Dipartimento del Mella. Dal punto di vista fiscale il territorio era invece organizzato in 30 basi di censimento, dette comuni censuari: i tre comuni amministrativi di Iseo con Pilzone, Colombaro con Timoline e Calino con Torbiato risultavano divisi censuariamente in sei entità territoriali distinte, e Fiumicello, amministrativamente unito al Circondario esterno di Brescia, faceva sezione catastale a sé.
+      	</p>
+    </section>
+    
+   	<section class="slide" id="NOTE STORICHE">
+    	<h2>NOTE STORICHE</h2>
+			<p>L’attuale comprensorio vitivinicolo insiste, per buona parte, su un territorio la cui origine denominativa risalirebbe, secondo l’ipotesi più accreditata e plausibile, all’altomedioevo, periodo in cui le corti sviluppatesi attorno ai nuceli abitati della zona centrale, con l’arrivo dei monaci cluniacensi poterono godere di particolari privilegi (curtes francae).
+Il nome Franza Curta compare tuttavia per la prima volta in una deposizione testimoniale del 1240 e, a distanza di pochi anni, nel codice del 1277 contenente gli statuti di Brescia (Motta 2006, 54-56).
+Come scrittura su una mappa (La franza curta), ad indicare grossolanamente un areale geografico centrato sull’anfiteatro morenico, appare in una mappa disegnata e colorata su pergamena della seconda metà del XV secolo.
+Il primo documento che ne definisce l’estensione territoriale è lo statuto cittadino di Francesco Foscari del 1429, che individua come territorio della Franciacorta le due quadre (questo il nome della circoscrizione amministrativa e giurisdizionale del territorio extraurbano in epoca veneta) di Gussago e di Rovato. Nel loro insieme le due quadre ricomprendevano 23 comunità, 20 delle quali ancor oggi ricadenti nel comprensorio vinicolo. Identico è l’assetto territoriale – con la sola esclusione di Sale, oggi frazione di Gussago – che si desume da una “descrizione” del 1493 e dalla relazione di fine mandato del capitano Giovanni Da Lezze del 1610.
+                <img src="http://www.paolooscar.com/image/Carta_1469_540.jpg" alt="Figura 2">
+
+			</p>
+	</section>
+    
+    <section class="slide" id="I CATASTI STORICI E LA LORO VALENZA STORICO-RICOSTRUTTIVA">
+        <h2>I CATASTI STORICI E LA LORO VALENZA STORICO-RICOSTRUTTIVA</h2>
+			<p>La volontà di ridare una forma agli assetti territoriali del passato coinvolge in maniera coattiva la problematica delle fonti da selezionare ed utilizzare nei processi ricostruttivi, siano essi di tipo descrittivo che di tipo cartografico. Una volta definito l’aspetto da affrontare e delimitato il territorio oggetto di studio, è fondamentale individuare una fonte documentaria attendibile in grado di fornire dati quantitativi certi per definirne in dettaglio i caratteri costitutivi peculiari.
+Essendo l’obiettivo del progetto quello di ricostruire il paesaggio, sia dal punto di vista naturale e agrario (della diffusione spaziale delle colture), sia antropico, la fonte privilegiata a cui ci si è rivolti è stata chiaramente la cartografia storica: la soglia cronologica di inizio Ottocento consente senz’altro di prevederne l’utilizzo, atteso che ci si trova in un epoca in cui si può disporre di una cartografia scientifica, non ideologicamente connotata, come nel caso delle tante raffigurazioni del secolo precedente.
+Ciò di cui si ha più bisogno, innanzitutto, è un supporto cartografico dettagliato, rigoroso, attendibile ma il più possibile neutro, in grado cioè di fornire un'immagine obiettiva del territorio: quella che oggi chiameremmo "carta tecnica"; una carta che, se della realtà rappresenta solo alcuni degli innumerevoli elementi e aspetti che la compongono, sicuramente ci fornisce l'oggettività della misura e delle relazioni topologiche che le carte a piccola scala o, in altra forma, le descrizioni letterarie o i resoconti di viaggio, molto difficilmente riescono a restituire. Non sono tuttavia l'aridità del disegno o di una geometria, o la fredda precisione topografica di un rilievo che, da sole, conferiscono ad una carta il valore e le funzioni che ricerchiamo per ricostruire un paesaggio e la sua immagine. E’ necessario, naturalmente, anche un contenuto.
+Ecco allora che la scelta è ricaduta sui catasti storici: la cartografia catastale, infatti, è quella che più di ogni altra ci restituisce, ad un tempo, sia un rilevo preciso del territorio, sia un insieme di informazioni sul suo utilizzo in ambito non solo agronomico, ma anche dal punto di vista della struttura della proprietà, degli insediamenti, dell’infrastrutturazione e della toponomastica.
+Il catasto, sotto l’aspetto documentale, è uno strumento di accertamento fiscale, ed in quanto tale si può ritenere che fosse obiettivo ed attendibile in ordine al suo contenuto informativo: la sua funzione, infatti, era innanzitutto quella di accertare la proprietà, ed in secondo luogo di giungere ad una corretta determinazione della rendita dei beni immobili, fabbricati e terreni, allo scopo di determinare un equo riparto del prelievo fiscale.
+			</p>
+	</section>
+    
+    <section class="slide" id="IL CATASTO NAPOLEONICO">
+    	<h2>IL CATASTO NAPOLEONICO</h2>
+			<p>Il catasto utilizzato nel progetto è il cosiddetto Catasto napoleonico, i cui lavori di allestimento ebbero inizio nel 1807 in esecuzione del Decreto 13 aprile «relativo alla formazione del catasto del Regno», che imponeva a tutti i comuni di dotarsi di una mappa topografica, e stabiliva l'ordine dei lavori secondo un programma territoriale che registrava anche il dipartimento del Mella tra i quelli in cui la campagna di rilevazione avrebbe preso avvio (cfr. Bollettino delle leggi del Regno d’Italia, 1807, vol. 1).
+			</p>
+    </section>
+    
+    <section class="slide" id="L'APPARATO CARTOGRAFICO">
+    	<h2>L'APPARATO CARTOGRAFICO</h2>
+			<p>Al decreto erano annesse le regole che dovevano servire ai geometri per la "misura dei terreni", la formazione delle mappe (in scala 1:2000) e dei registri fondiari, denominati “sommarioni” (cfr. Istruzioni della Direzione Generale del Censo ai geometri incaricati della misura dei terreni e formazione delle Mappe e dei Sommarioni, 1807; citazioni e riferimenti si riferiscono all’edizione del 1811). Relativamente alle mappe, che dovevano essere realizzate «sopra la faccia del luogo» con l'ausilio della tavoletta pretoriana, le Istruzioni stabilivano precise indicazioni relativamente al contenuto e alla modalità comunicativa. Così, accanto, ovviamente, ai «pezzi di terra distinti secondo i rispettivi proprietarj» (art. 34) – oggetto principale di questo tipo di documentazione – la carta doveva delineare anche tutti i particolari topografici e gli accidenti geografici. Nei vari punti in cui si articola il primo capitolo delle Istruzioni, si prescrive la raffigurazione delle linee di confine, dei termini o cippi confinari, delle strade pubbliche e private (il sedime, in realtà, è ottenuto indirettamente per differenza dalla parcellizzazione), delle acque superficiali – in tutte le declinazioni classificatorio-denominative di fiume, torrente, rio, canale, scolo etc. – e delle piazze e spazi pubblici (artt. 21, 22, 32); tutti elementi che, com’è facile intuire, nulla avevano a che fare col censimento fondiario in quanto erano o elementi privi di una oggettivazione reale, come nel caso delle linee di confine, o porzioni di territorio di proprietà del demanio, ed il cui solo scopo era quello di integrare il contenuto delle mappe al fine di realizzare un prodotto cartograficamente completo. Il risultato fu quello di ottenere carte attendibili dal punto di vista metrico e nel contempo esaustive per ciò che riguarda la rappresentazione e il contenuto topografico (Fig. 2).
+        Figura 2. Stralcio della mappa di Provezze [1809]. È visibile la tematizzazione semplificata per i soli caseggiati e orti e la suddivisione in triangoli delle particelle per la misura “a tavolino” delle superfici.
+                <img src="http://www.paolooscar.com/image/Es_map_PRO.jpg" alt="Figura 3">
+        	</p>
+    </section>
+    
+    <section class="slide">
+    		<p>Nell’economia di un’impresa così imponente come quella avviata dal governo francese per il catasto, è ragionevole supporre che, trattandosi di carte di primo rilievo, si pensasse anche ad un loro possibile riutilizzo per la produzione di carte derivate a scala minore. Le mappe comunali furono infatti reimpiegate dapprima per il completamento della Carta del Milanese e del Mantovano degli astronomi di Brera con l’aggiunta dei territori ex-veneti (integrazione databile, sulla base dei confini comunali e sovracomunali riportati nell’area bresciana interessata, dopo il 1816), e successivamente per l’allestimento delle Corografie dei distretti e dei Tipi distrettuali realizzati intorno alla fine del primo quarto dell’Ottocento.
+Precise indicazioni venivano fornite anche per le scritture e la simbologia da impiegare nella numerazione dei mappali; le lettere per i beni «di regia pertinenza, i luoghi sacri e religiosi, le fortezze, le piazze ed altri luoghi pubblici» (art. 57) esclusi dall'estimo; lungo i confini; nella denominazione di strade, corsi d'acqua, nuclei abitati, case sparse e altre cose notevoli (porti, ponti, fontane) (art. 28).
+Infine, una prescrizione che evidenzia il carattere di modernità dell'impresa cartografica messa in atto, è quella relativa a ciò che oggi chiameremmo vestizione della carta. All'articolo 12 si danno specifiche indicazioni (come in un moderno capitolato) sulla tonalità dei colori da utilizzare (inchiostro di China, carminio, azzurro di Prussia, gommagutte) nei segni grafici e nella coloritura. Come e dove debba essere utilizzata questa "palette di colori" viene dettagliato nell'art. 54 che dispone: «Perché si possano nella mappa originale distinguere i terreni coltivati dai siti occupati dalle case ed altri edifici, ed altresì distinguere le strade dai fiumi, canali e simili, le case saranno indicate in color rosso, per la sola parte che resta coperta a tetto, legando a questa con una sgraffa o sia linea uncinata il perimetro dei cortili inservienti alla casa; in color verde gli orti e i giardini, ed in color d’acqua i laghi, i fiumi, i canali e simili; come pure il colore di fuliggine chiaro le strade nazionali, le comunali e le consorziali. Le strade private di cui al paragrafo § 50, dovendo essere comprese nella misura dei terreni cui servono, non saranno colorite ma soltanto delineate come sopra. Queste operazioni si dovranno fare dal geometra prima di staccare o fogli dalla tavola.».
+Le disposizioni sull'utilizzo dei colori contemplavano anche la simbologia legata ad aspetti tecnico-operativi, quali la suddivisione e la numerazione dei triangoli in cui venivano scomposti i lotti per il calcolo delle superfici: rosso per i terreni, verde per i fabbricati, quest’ultima precisazione in verità non sempre rispettata dai geometri (art. 95).
+Se si escludono i fabbricati, le acque e le strade, tutto il resto del territorio è rappresentato  dalla semplice suddivisione particellare ed è lasciato in bianco. Fanno eccezione, come si è detto, orti e giardini, ma non si può certo per questo parlare di carte tematiche: la rappresentazione rimane comunque tecnica e matematica, frutto di un'intenzione meramente denotativa, o, se si vuole, anche fuor di metafora, una “rappresentazione fiscale" del territorio, che, oltre ai contorni dei limiti di proprietà, nulla comunica se non i rapporti topologici di un rilievo topografico. Nonostante ciò, o forse proprio per questo, sul fronte della tecnica cartografica il catasto napoleonico costituisce un’innovazione senza precedenti: se si fa eccezione per sporadici rilievi tecnici di fortezze, giocoforza rigorosi, o di porzioni di territorio commissionati da singoli possidenti (cabrei), nessun’altra rappresentazione cartografica può essere paragonata ai rilievi catastali, che, da punto di vista tecnico, rappresentano un vero e proprio momento di discontinuità, un salto qualitativo che dà avvio, su vasta scala, a una cartografia moderna. Va poi ricordata l'uniformità di rilievo grafico e di contenuto delle restituzioni, che permette di assemblare le mappe senza timore di trovarsi di fronte a "terre di nessuno" o zone di sovrapposizione, fino a coprire integralmente l'area interessata, così come è avvenuto per la Franciacorta.
+			</p>
+    </section>
+    
+    <section class="slide" id="IL REGISTRO FONDIARIO (SOMMARIONE)">
+    	<h2>IL REGISTRO FONDIARIO (SOMMARIONE)</h2>
+    		<p>Le campagne napoleoniche di rilievo portarono alla realizzazione di mappe accurate e uniformi ma, per quel che si è detto, "mute". Ecco quindi che l'opportunità di integrarle con un contenuto tematico ci viene dall'apparato descrittivo che correda e completa la documentazione di impianto. Ogni mappa è infatti accompagnata da un registro censuario, che raccoglie in modo ordinato una serie di informazioni relative a ciascun lotto rappresentato in mappa. (Fig. 3)
+Questi dati, per il catasto in oggetto, sono cinque: numero di mappa e subalterno, possessore, denominazione dei pezzi di terra, qualità e superficie (quantità). Il primo è un numero progressivo identificativo univoco, che permette di associare alla particella delineata in mappa le informazioni contenute nel registro. Oggi diremmo che rappresenta l'ID di join che permette l'unione degli attributi descrittivi alle features di un moderno sistema informativo geografico (GIS).
+Nella colonna possessore viene riportata l'intestazione del proprietario seguendo le norme del capitolo II delle Istruzioni e le esemplificazioni allegate (artt. 65-76 e modula A). La sequenza più ricorrente è: cognome e nome dell'intestatario – qm (quondam)/fu – nome del padre.
+Le due successive voci di rilevazione (denominazione e qualità) vengono accomunate nelle Istruzioni sotto il paragrafo Descrizione dei terreni e delle case (artt. 77-90). Entrambe venivano acquisite, mappa alla mano, come previsto dall’articolo 65, «sulla faccia del luogo».
+        Figura 3. Pagina d’esempio del Sommarione del comune censuario di Bornato, 1810, copia conforme (ASBs).
+                <img src="http://www.paolooscar.com/image/SOM_Bornato_540.jpg" alt="Figura 4">
+        	</p>
+    </section>
+    
+    <section class="slide">
+    	<p> Nell'ultima colonna del registro viene infine annotata la superficie, al cui metodo di calcolo è dedicato l'intero capitolo III (artt. 93-118). La procedura, descritta nei particolari, si basava sul calcolo delle aree triangolari in cui veniva scomposta la figura di ogni mappale.
+A parte infatti le misure lineari di appoggio lungo gli allineamenti delle strade, il calcolo delle superfici dei lotti veniva eseguito a tavolino sulla mappa e non in campagna, secondo un procedimento completamente invertito rispetto al rilievo celerimetrico attuale, in cui in campagna si rilevano le misure che servono per restituire successivamente il disegno in studio. D’altra parte conviene ricordare che la tavoletta pretoriana è un goniografo e non un goniometro. La mappa, pertanto, doveva essere precisa perché costituiva, secondo il metodo utilizzato, un modello a scala ridotta della realtà sul quale eseguire le operazioni di misura. La conferma della bontà del rilievo è data dal fatto che, per un comune di medie dimensioni, bastano poche decine di punti omologhi di controllo per georferenziare la mappa storica con un accettabile grado di approssimazione, sicuramente già soddisfacente per i soli scopi conoscitivi. L'unità di misura utilizzata era la pertica censuaria o metrica di 1000 mq, che si differenziava dal piò, l'unità di misura agraria locale ancor oggi in uso, che equivale invece a 3255,39 mq, come viene regolarmente ricordato all’inizio di ogni sommarione.
+		</p>
+ 	</section>
+    
+    <section class="slide" id="LE FASI DI IMPLEMENTAZIONE DEL SISTEMA INFORMATIVO GEO-STORICO">
+        <h2>LE FASI DI IMPLEMENTAZIONE DEL SISTEMA INFORMATIVO GEO-STORICO</h2>
+    		<p>L'analogia della logica di funzionamento del catasto storico con i moderni sistemi informativi geografici, per quanto si è detto, appare sufficientemente chiara: entrambi si basano su un modello che considera due differenti componenti informative, cartografia e dati alfanumerici, integrandole secondo una relazione che associa agli oggetti della mappa le relative descrizioni contenute nella tabella degli attributi di un registro o di un database.
+Il modello informativo, la natura e la struttura dei dati sono analoghi. Unica sostanziale differenza è la modalità di gestione dei dati, totalmente manuale nella documentazione cartacea, completamente automatizzata nei GIS. Attesa pertanto la "naturale predisposizione" ad un trattamento informatizzato, il trasferimento in un GIS è sembrata la via privilegiata per valorizzare la fonte. Il passaggio, ancorché semplice in linea teorica, ha tuttavia richiesto molto tempo, sia in fase di progetto, per i molteplici aspetti concettuali e tecnici coinvolti, sia in fase di realizzazione pratica (digitalizzazione di ca. 45000 particelle e relative descrizioni alfanumeriche da inserire e rielaborare in ambito DBMS).
+Tale integrazione ha permesso di unire, mappale per mappale, la cartografia di ogni comune ai dati del censimento, e di ottenere un sistema informativo in cui le due componenti dell'informazione possono ora essere interrogate contemporaneamente, ottenendo come output, oltre ad una tradizionale tabella recante i record che soddisfano le condizioni di ricerca (ad es. tutte le particelle in cui è presente la vite, o registrate a nome di un determinato possessore, oppure in cui sono soddisfatte contemporaneamente più condizioni), anche la visualizzazione delle particelle a cui tali record sono associati.
+Oltre a queste opzioni di ricerca mirate, impensabili o comunque eccessivamente indaginose attraverso il materiale cartaceo, la strutturazione in logica GIS ha aperto la strada, sul fronte cartografico, alla elaborazione di carte tematiche, permettendo di realizzare l’obiettivo che ci si era posti, in sede di progetto, di spettacolarizzare i dati di censimento “nascosti” nei registri.
+Di seguito si riporta una breve descrizione delle principali fasi di implementazione.
+			</p>
+	</section>
+    
+    <section class="slide" id="ACQUISIZIONE DEL MATERIALE ARCHIVISTICO">
+    	<h2>ACQUISIZIONE DEL MATERIALE ARCHIVISTICO</h2>
+    		<p>L’acquisizione materiale ha riguardato la documentazione originale conservata presso gli Archivi di Stato di Brescia e di Milano. Per ciò che riguarda l’apparato cartografico napoleonco sono state prese in considerazione sia le mappe originali d’impianto – consultabili attraverso portale Atlante dei catasti storici dall’ASMi – sia le mappe-copia conservate presso l’ASBs, acquisite mediante scanner piano. Per una verifica della geometria delle particelle e dei numeri di mappa sono state considerate anche le mappe d’impianto del Catasto lombardo-veneto di metà Ottocento (ASBs) e le mappe dell’Amministrazione forestale del 1923. La campagna di acquisizione dei registri è consistita nella riproduzione fotografica in alta definizione dei registri conservati presso l’ASBs e l’ASMi (per 5 registri mancanti in ASBs).
+    		</p>
+    </section>
+    
+    <section class="slide" id="GEOREFERENZIAZIONE DELLE MAPPE">
+    	<h2>GEOREFERENZIAZIONE DELLE MAPPE</h2>
+			<p>L’operazione di georeferenziazione delle mappe catastali storiche in un sistema di riferimento cartografico attuale ha rappresentato una delle fasi più impegnative e al contempo importanti del lavoro.
+La possibilità di poter confrontare con l’attualità i dati storici, agronomici e di altro tipo, mediante la sovrapposizione di strati tematici, è senza dubbio uno degli aspetti più interessanti del progetto. L’ipotesi di non georiferire le mappe, se da un lato avrebbe semplificato molto la creazione del sistema, dall’altro avrebbe invalidato completamente il senso del progetto: ignorare la componente spaziale delle informazioni avrebbe contribuito ad equiparare tutto il lavoro a poco più di mera analisi statistica dei dati censuari (anche se corredata da una cartografia), eseguibile per altro anche sul solo apparato descrittivo (registri), azzerando le potenzialità e le opportunità di ricerca e analisi consentita dai GIS.
+Grazie alla collaborazione con l’Ufficio GIS e cartografia della Provincia di Brescia è stato possibile accedere alla documentazione cartografica digitale del catasto attuale dei 19 comuni ricadenti nell’area del comprensorio. Per il tipo di contenuto informativo e la modalità di rappresentazione (distinzione tra terreni, fabbricati, acque e strade e trama particellare), la cartografia catastale attuale è sicuramente, tra quelle disponibili, la più indicata e pertinente ai fini della georeferenziazione delle mappe storiche; la disponibilità delle basi attuali in formato vettoriale, ha poi agevolato grandemente questa fase essendo quelle della provincia di Brescia disponibili in shape file e proiettate in Gauss-Boaga.
+Le mappe del catasto napoleonico, cosi come quelle dei due catasti che sono succeduti, di metà e fine Ottocento – ricavati, com'è noto, dal napoleonico – sono prive di qualsiasi inquadramento geodetico e pertanto la georeferenziazione è avvenuta attraverso la ricerca di punti omologhi, ricercati di norma negli edifici storici conservati: edifici di culto, santelle votive, oratori, ville etc. In qualche caso, nelle porzioni di territorio prive di qualsiasi riferimento edilizio si è fatto ricorso alla suddivisione particellare quanto questa presentava un alto grado di sovrapponibilità con la trama attuale. Nelle zone meno antropizzate, è interessante notare a questo riguardo la generale persistenza del ritaglio catastale tra le due soglie.
+Raramente sono stati considerati i confini amministrativi (salvo casi di comprovata persistenza dei tracciati, come nel caso di particolari condizioni orografiche), anche perché una delle finalità del progetto era quella di ricostruire l’andamento delle circoscrizioni amministrative storiche, che spesso infatti non ricalcano fedelmente quelle attuali. Infine, ma solo in via preliminare per impostare la procedura, sono stati considerati i corsi d’acqua naturali (solo in territorio montano) e le strade.
+L’operazione è stata condotta utilizzando esclusivamente le funzionalità dell’applicativo ArcGIS Basic. Nei comuni piccoli o medio piccoli è stata utilizzata di preferenza una trasformazione polinomiale del 2° ordine, per conservare il più possibile la geometria dell’originale; nei casi più complessi e nei comuni più estesi si è fatto ricorso invece al metodo del rubber sheeting (spline), fors’anche più aderente al tipo di errore introdotto dal metodo di rilevamento adottato all’epoca (tavoletta pretoriana), risolvendo le discrepanze dovute alle (grandi) estensioni con più aggiustamenti locali.
+Si tenga presente, a questo proposito, che obiettivo del lavoro, che, ricordiamo, ha coinvolto una superficie di oltre 200 kmq, non era tanto l’esercizio accademico della riduzione degli errori ai minimi termini (cosa realizzabile sperimentalmente su superfici limitate e ricche riferimenti, su cui poter – e dover! – fare ricerche accurate sulle modificazioni intervenute nell’arco di tempo considerato, con analisi dettagliate sugli edifici), bensì quello di adottare una procedura in grado di restituire risultati accettabili da un punto di vista “conoscitivo”. Uno scostamento dell’ordine anche di un paio di metri è parso quindi più che accettabile allo scopo data la mole di lavoro prevista. Se questo è stato il criterio adottato in linea generale, va tuttavia precisato che nei centri abitati si è cercato di tendere ad un maggior grado di accuratezza.
+Le immagini ottenute sono state successivamente ricampionate con il metodo più opportuno tenendo conto della trasformazione adottata e in funzione della leggibilità ottenibile.
+Al fine di rendere le mappe storiche digitalizzate compatibili con i sistemi di esposizione sul Web, come il servizio cluod di ESRI (ArcGIS Online), i file sono stati riproiettati in WGS84 UTM32 per mezzo del servizio di trasformazione di Regione Lombardia.
+Seguono alcune immagini relative alla georeferenziazione della mappa del comune di Cellatica sullo shape del catasto vigente e un esempio di overlay degli shape (catasto vigente e storico digitalizzato) del comune di Rovato. (Figg. 4-8)
+			</p>
+    </section>
+    
+	<section class="slide" id="Figura 5">
+        <img src="http://www.paolooscar.com/image/GEO_CEL.jpg" alt="Figura 5">
+    		<p>Figura 5. Mappa generale di Cellatica (1809) non georeferenziata; in primo piano il particellato del catasto vigente (terreni in rosso e fabbricati in bianco)
+    		</p>
+    </section>
+    
+    <section class="slide" id="Figura 6">
+        <img src="http://www.paolooscar.com/image/GEO_CEL2.jpg" alt="Figura 6">
+    		<p>Figura 6. Mappa generale di Cellatica (1809) georeferenziata; in primo piano il particellato del catasto vigente (terreni in rosso e fabbricati in bianco)
+    		</p>
+    </section>
+    
+    <section class="slide" id="Figura 7">
+        <img src="http://www.paolooscar.com/image/GEO_CEL_CA.jpg" alt="Figura 7">
+    		<p>Figura 7. Particolare del centro abitato di Cellatica (1809) non georeferenziata; in primo piano il particellato del catasto vigente (terreni in rosso e fabbricati in bianco)
+    		</p>
+    </section>
+    
+    <section class="slide" id="Figura 8">
+        <img src="http://www.paolooscar.com/image/GEO_CEL_CA2.jpg" alt="Figura 8">
+    		<p>Figura 8. Particolare del centro abitato di Cellatica (1809) georeferenziata; in primo piano il particellato del catasto vigente (terreni in rosso e fabbricati in bianco)
+    		</p>
+    </section>
+    
+    <section class="slide" id="Figura 9">
+        <img src="http://www.paolooscar.com/image/GEO_ROV_CA.jpg" alt="Figura 9">
+    		<p>Figura 9. Particolare del centro abitato di Rovato (1809); overlay fra lo shape del livello "di base" (a colori) e lo shape dei fabbricati del catasto vigente (campitura obliqua).
+    		</p>
+    </section>
+    
+    <section class="slide" id="DIGITALIZZAZIONE DELLE MAPPE">
+    	<h2>DIGITALIZZAZIONE DELLE MAPPE</h2>
+    		<p>Una volta referenziati geograficamente, i raster delle mappe catastali storiche sono stati sottoposti ad un lungo ed accurato processo di digitalizzazione, mappale per mappale, con l’introduzione, in fase di editing, del numero di mappa e subalterno, di un codice identificativo relativo alla tipologia di copertura (in quattro classi), e dell’indicazione, anch’essa codificata, delle pertinenze inedificate degli edifici (corti, anditi, accessi, strade private etc.) e del relativo mappale di appartenenza, ciò al fine di risalire alla proprietà di queste superfici, non identificate in mappa da alcun identificativo (ad eccezione del simbolo grafico convenzionale, non riprodotto nella carta digitalizzata) ma che tuttavia entravano nel computo della superficie totale della particella.
+Oltre al particellato, la digitalizzazione ha previsto l’acquisizione di tutti i particolari di corredo grafico presenti sulle mappe quali: linee di confine, riferimenti puntuali di incrocio di confine con i comuni contermini, cippi confinari (quando presenti), fontane pubbliche, scalette, ponti, linee di crinale, tracciato delle strade interpoderali – integrati nel livello del particellato o in layer dedicati a seconda della tipologia di “oggetto”. Un trattamento separato hanno avuto anche le scritture presenti sulla mappa, informazione particolarmente significativa in quanto spesso non replicata nel sommarione e indispensabili per la redazione delle carte tematiche. Per queste è stato costituito un livello puntuale a cui sono stati associati i dati denominativi sottoposti ad una classificazione in funzione dell’oggetto denominato: capoluogo di comune (e comuni confinanti, lungo il confine), frazione, case sparse, cascinale, edifici di culto, oronimo e linea di crinale, idronimo e punti notevoli. I dati sono poi stati convertiti in un geodatabase per poter essere gestiti più efficacemente a livello unitario.
+In totale le particelle digitalizzate ammontano a 42.000 unità, ma il numero totale delle features del sistema geo-storico, se si includono anche le pertinenze di cui si è detto, ammonta a ca. 45.000.
+			</p>
+	</section>
+    
+    <section class="slide" id="Figura 10">
+        <img src="http://www.paolooscar.com/image/Digit_CEL.jpg" alt="Figura 10">
+    	<p>Figura 10. Digitalizzazione e inserimento, in fase di editing, di Id (numero di mappa), subalterno, codice di copertura (type) e pertinenza.
+    	</p>
+    </section>
+    
+    <section class="slide" id="Figura 11">
+        <img src="http://www.paolooscar.com/image/BASE_DIGIT_540.jpg" alt="Figura 11">
+    	<p>Figura 11. Base storica generale (30 comuni censuari, 45.000 particelle) - ingrandisci l'immagine
+    	</p>
+    </section>
+    
+    <section class="slide" id="DATA-ENTRY DEI REGISTRI CENSUARI">
+    	<h2>DATA-ENTRY DEI REGISTRI CENSUARI</h2>
+    		<p>Parallelamente si è proceduto alla immissione dei dati di censimento riportati nei registri fondiari: numero di mappa e subalterno, possessore, denominazione dei pezzi di terra, qualità agraria (e destinazione d’uso edilizia per i fabbricati) e superficie (in pertiche metriche o censuarie, 1 p.m. = 1000 mq).
+Il data entry è stato realizzato, in prima istanza, per motivi di celerità di immissione, tramite un foglio elettronico predisposto. I dati immessi sono stati successivamente riversati in un database relazionale al fine di poter gestire in modo unitario l’intera banca dati. La gestione tramite database è servita, per esempio, per predisporre i dati alla gestione informatica; per la produzione di un codice identificativo univoco generale delle particelle per l’intera base dati geografica (IDU), e, ancora, per la rielaborazione e l'estrazione di dati quantitativi necessari alla produzione delle carte tematiche, segnatamente per quelle della qualità agraria e della proprietà fondiaria.
+La banca dati generale è servita inoltre per effettuare alcune verifiche in corso d’opera, relativamente alla digitalizzazione delle mappe, per verificare eventuali incongruenze nel perticato (attraverso la produzione di mappe con funzione di verifica che, mediante un gradiente di colore, visualizzano a colpo d’occhio l’entità dell’errore – in valore assoluto – tra perticato riportato nel registro e quello calcolato dal sistema, particella per particella: si ricorda che la mappa è georeferenziata e in scala) o nel dato di copertura dovuti a errori di lettura o di interpretazione della mappa.
+			</p>
+	</section>
+    
+    <section class="slide" id="NORMALIZZAZIONE DEI DATI E INTEGRAZIONE CON LA BASE GEOGRAFIA IN LOGICA GIS">
+    	<h2>NORMALIZZAZIONE DEI DATI E INTEGRAZIONE CON LA BASE GEOGRAFIA IN LOGICA GIS</h2>
+    		<p>Una delle fasi più interessanti del lavoro, preliminari alla costituzione del sistema informativo, per la quale è stata necessaria un'analisi dei contenuti descrittivi della fonte, è quella della normalizzazione dei dati, fase necessaria sia per una razionale gestione informatica degli stessi, sia ai fini di una loro corretta interpretazione e cartografazione. Si tratta del primo step operativo che, finalmente, dal lungo (ed estenuante) lavoro di trasposizione filologica della fonte, permette di passare nel vivo dell’analisi dei contenuti informativi.
+Il problema nasce dall'estrema variabilità di forma con cui vengono riportati nei registri i dati. Ciò accade tanto per l’intestazione delle ditte (possessori), quanto per denominazioni locali, che, in parte, per le qualità agrarie.
+                <img src="http://www.paolooscar.com/image/DATADATA_piccolo.jpg" alt="Figura 12">
+			</p>
+    </section>
+    
+    <section class="slide" id="NORMALIZZAZIONE DEI DATI E INTEGRAZIONE CON LA BASE GEOGRAFIA IN LOGICA GIS_2">
+    	<p>Nel caso dei possessori, la variabilità si rileva sia per i nomi (Bartolomeo, nome molto comune, è riportato in ben 11 modi diversi: 
+Bartolomeo, Bertolameo, Bortolameo, Bartolommeo, Bortolomeo, Bortolõ…), sia per i cognomi degli intestatari (Albrici, Albrisi, Albrissi, Albrizzi, Alberisi). Così, nell’intento di uniformare le varianti, nel caso dei nomi propri si è adottato il criterio di indicare, per i nomi ancora in uso, la forma attuale, e per quelli desueti la forma maggiormente ricorrente. Sorvolando sul procedimento di estrazione dei soli nomi dalla banca dati generale, si ricorda solo che l’operazione di normalizzazione ha riguardato maschi e femmine, e che per i nomi maschili sono stati utilizzati sia il nome dell’intestatario che del padre.
+Per i cognomi, invece, dopo aver selezionato dalla banca dati generale la lista completa con il numero di rango (ricorrenza) per ogni comune storico, si è provveduto ad incrociare i dati ottenuti con i cognomi dell'Anagrafe sanitaria (estrazione gentilmente messa a disposizione dalla Direzione Generale Salute della Regione Lombardia) dei 19 comuni attuali che ricadono nell'area oggetto di studio, al fine di selezionare, tra le varianti storiche, la forma oggi prevalente da assumere come voce guida di normalizzazione.
+Questo lavoro sui nomi e sui cognomi, oltre a ricoprire un interesse dal punto di vista storico per un eventuale studio sull'onomastica ottocentesca, si è reso necessario per la rielaborazione quantitativa delle proprietà fondiarie: la varietà delle forme con cui si presentano nomi e cognomi avrebbe, inevitabilmente, portato ad una falsificazione del dato, conducendo ad una polverizzazione della proprietà tra ditte nominalmente differenti (magari per il solo raddoppio di una consonante, o un banale errore di ortografia) ma nella realtà appartenenti al medesimo soggetto, impedendo, di fatto, la realizzazione di carte tematiche sulla struttura e sulla distribuzione della proprietà fondiaria.
+Per ciò che riguarda le denominazioni locali, considerata la presenza di numerose denominazioni generiche rinvenibili in molti comuni (Chioso, Ponchione, Breda, Poffa, Barco, Muraca etc.), si è preferito procedere ad una normalizzazione in fase di redazione delle carte tematiche, così da verificare visivamente l’effettiva necessità di uniformare le varianti tenendo conto della contiguità geografica, salvaguardando così le piccole differenze linguistiche solo nel caso di appezzamenti distanti fra loro.
+Nel caso delle qualità agrarie l'operazione di normalizzazione è stata agevolata dal fatto che, nella rilevazione di questo dato, ci si doveva attenere ad una nomenclatura standard definita nel secondo capitolo delle Istruzioni (artt. 77-90). Gli interventi in questo caso si sono limitati alla correzione degli errori di ortografia o di inversione dei termini (bosco ceduo misto, bosco misto ceduo), e all'esclusione dalla classificazione dell'indicazione relativa alla presenza di gelsi nelle colture consociate (– moronato, – con mori/moroni) o di terreno irriguo (– adacquatorio), per non aumentare a dismisura il numero di classi da tematizzare. Queste due specifiche, data la loro importanza (in particolare la presenza dei gelsi), sono state tuttavia considerate e trattate in separatamente, così da poter visualizzare in overlay i territori gelsati e quelli irrigui nel loro insieme.
+Nell'intento infine di rendere possibile il confronto con l'attualità e l'integrazione con altre banche dati, è stata eseguita un'analisi comparata tra la classificazione dei terreni prevista dalle Istruzioni (confrontata anche con altre nomenclature del catasto successivo) e quella definita in sede di progetto CORINE Land Cover (CLC), ripresa da Ersaf nel progetto Dusaf per la Regione Lombardia. Partendo dalla normalizzazione formale si è proceduto ad una generalizzazione (o normalizzazione di contenuto) delle qualità per ricondurle al 3° livello del progetto CLC. A seguito di questo intervento, che ha portato all’elaborazione di una legenda dell’uso del suolo in 25 qualità agrarie (dalle oltre 130 varianti iniziali) e 12 destinazioni d’uso edilizie (dalle 70 iniziali), articolata in cinque classi principali di copertura, si è proceduto alla produzione di una serie di carte tematiche, che costituiscono e sanciscono di fatto il passaggio all’analisi interpretativa della fonte.
+L’esito della fase di normalizzazione è un file che è stato integrato, secondo una logica di sistema informativo geografico, nella base storica digitalizzata per popolarla con i dati di cenismento. Questo lavoro di integrazione è stato fatto sulla base generale dei 30 comuni censuari utilizzando un identificativo particellare univoco (IDU) che include codice ISTAT (storico), numero di particella e subalterno. Per un utilizzo a fini statistici è stato sviluppato un secondo codice che integra anche la qualità agraria storica normalizzata o la classificazione CLC/Dusaf.
+		</p>
+	</section>
+    
+	<section class="slide" id="Figura 12">
+        <img src="http://www.paolooscar.com/image/Screen_DBMS.jpg" alt="Figura 12">
+   		<p>Figura 12.	Struttura della banca dati alfanumerica: tabella principale e tabelle collegate (anagrafica storica; nomenclature CLC; possessori)
+   		</p>
+   	</section>
+    
+    <section class="slide" id="Figura 12">
+        <img src="http://www.paolooscar.com/image/Screen_DBMS_POS.jpg" alt="Figura 13">
+    	<p>Figura 13.	Struttura della banca dati alfanumerica: tabella di normalizzazione dei possessori e tabelle collegate (superfici; database cognomi sanità RL; statistica possessori).
+    	</p>
+    </section>
+    
+    <section class="slide" id="ESITO MEDIATICO E SVILUPPI">
+    	<h2>ESITO MEDIATICO E SVILUPPI</h2>
+			<p>Il popolamento della base geografica storica con in dati di censimento fiscale normalizzati ha permesso di elaborare, per ora, quattro livelli tematici consultabili in locale tramite gli applicativi della famiglia ESRI. Lo sviluppo del sistema dal punto di vista informatico prevede l'esposizione sul web in forma autonoma (su server proprietario o ospitato su piattaforma AGOL) ovvero integrata nei sistemi della P.A. La modalità è allo studio e in fase di valutazione da parte del Consorzio.
+Per venire incontro alle esigenze di consultazione "tradizionale" da parte di un pubblico non tecnico e per soddisfare al contempo ad una funzione didattica (scuole), per ogni comune sono state prodotte 4 carte tematiche di facile lettura per un totale di 124 tavole in formato A1.
+
+Queste le carte tematiche prodotte:
+			</p>
+	</section>
+    
+    <section class="slide" id="Carta di base">
+    	<h3>Carta di base</h3>
+    		<p>È l'elaborato più semplice dove, con pochi elementi cromatici, limitati alle classi CLC 1, 2 e 5, ovvero caseggiati (distinti però in civili e di culto), terreni agricoli e corsi d'acqua, si dà conto del solo dato di copertura del suolo, ovvero della distinzione tra territorio agricolo e antropizzato. I livelli relativi ai territori boscati e alle aree umide (classi CLC 3 e 4) non sono stati restituiti (in stampa) per adeguarsi il più possibile alle modalità raffigurative delle mappe originali. (Fig. 14)
+                <img src="http://www.paolooscar.com/image/TAB_BASE_540.jpg" alt="Figura 14">
+    		</p>
+    </section>
+    
+    <section class="slide" id="Carta delle qualità agrarie e delle destinazioni d'uso edilizie">
+    	<h3>Carta delle qualità agrarie e delle destinazioni d'uso edilizie</h3>
+        	<p>Uno degli elaborati più interessanti in cui vengono tematizzati i diversi usi del suolo, ovvero i diversi tipi di colture praticate in ambito agricolo, e delle diverse destinazioni d'uso in ambito urbano. Questa carta utilizza una palette propria, tuttavia è stato predisposto un sistema di codici per l'adozione della legenda CLC, che per gli edifici non prevede un livello di dettaglio come quello utilizzato. (Fig. 15)
+                <img src="http://www.paolooscar.com/image/TAB_QUAL_540.jpg" alt="Figura 15">
+ 			</p>
+    </section>
+    
+    <section class="slide" id="Carta delle denominazioni locali">
+		<h3>Carta delle denominazioni locali</h3>
+        	<p>In questa carta si raffigura la copertura territoriale di un dato, quello della toponomastica, particolarmente rilevante nell'ambito della ricerca storico-geografica, in quanto rivelatore di stati e condizioni d’uso deifondi che si riferiscono ad epoche anche molto risalenti. Si ricorda, inoltre, il valido contributo offerto dalla toponomastica ottocentesca per la geografia amministrativa nel reperimento dei riferimenti di confine dei comuni medievali. (Fig. 17)
+                <img src="http://www.paolooscar.com/image/TAB_TQUAL_540.jpg" alt="Figura 16">
+        	</p>
+	</section>
+
+	<section class="slide" id="Carta della proprietà fondiaria">
+		<h3>Carta della proprietà fondiaria</h3>
+    		<p>Ultimo elaborato della serie, è dedicato alla rappresentazione della distribuzione della proprietà terriera. Per esigenze di leggibilità (i proprietari posso essere anche più di 600 nello stesso comune) si è optato per limitare la cartografazione alle proprietà maggiori, quelle cioè che, nel loro complesso, coprissero almeno il 50% della superficie totale. Con una soglia di superficie minima fissata a 10 ettari, nella maggioranza dei casi ci si è attestati intorno ad una copertura del 66,6% del territorio, posseduto in media dal 8,5% dei proprietari, con un picco nel comune di Calino dove un solo proprietario possedeva più del 50% del territorio. (Fig. 18)
+                <img src="http://www.paolooscar.com/image/TAB_TOPO_540.jpg" alt="Figura 17">
+    		</p>
+	</section>
+
+	<section class="slide" id="CONCLUSIONI">
+    	<h2>CONCLUSIONI</h2>
+			<p>Quanto è stato fatto riguarda una sola soglia cronologica, quella di inizio Ottocento, la prima disponibile per l’area in oggetto. È in fase di studio lo sviluppo del sistema, con la medesima metodologia e analoghi criteri di trattamento dei dati, con l’informatizzazione del Nuovo Catasto Terreni di fine Ottocento. Ciò permetterà interporre, tra la soglia di inzio Ottocento e l’attualità, un nuovo e significativo strato informativo che darà modo di interpretare meglio l’evoluzione delle dinamiche trasformative in ambito agronomico, in particolare per la coltura della vite, urbanistico, infrastrutturale e della proprietà fondiaria.
+Il progetto, durato due anni, è stato realizzato grazie al finanziamento esclusivo del Consorzio per la tutela del Franciacorta e con il patrocinio della Provincia di Brescia.
+Il progetto è stato presentato pubblicamente al VI Convegno Internazionale di Studi "Città mediterranee in trasformazione…", organizzato da CIRICE-Università Federico II (Napoli, 13-15 marzo 2014).
+Per la sua realizzazione è stato utilizzato l'applicativo Esri ArcGIS v. 9.3-10.2.1.
+			</p>
+	</section>
+
+	<section class="slide" id="Ringraziamenti">
+    	<h2>Ringraziamenti</h2>
+			<p>Si ringraziano quanti, in varia forma e con differenti competenze, hanno fornito il loro contributo alla realizzazione del progetto, in particolare: Maurizio Zanella e con lui Consiglio del Consorzio per la tutela del Franciacorta, Daniela Fugaro e personale dell’Archivio di Stato di Brescia, Dario Dominico della Provincia di Brescia, Antonio Lentini di Éupolis, Carlo Zocchetti di Regione Lombardia, Vittorio Fusari, Angela Bertelli, Renato Lippi e Mario Trebeschi.
+				<br>
+				<br>
+				Paolo Oscar e Luca Moiana
+			</p>
+</section>
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
