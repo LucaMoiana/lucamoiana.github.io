@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Show Tooltips on Hover</title>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+
+
+<div id='map'></div>
+<script>
+var map = L.mapbox.map('map', 'examples.map-20v6611k').setView([45.641587880901234, 8.954200744628906], 12);
+
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+var geoJson = {
+    type: 'FeatureCollection',
+    features: [{
+        type: 'Feature',
+        properties: {
+            title: 'Ristoro Massina',
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [45.64008765934397, 8.965272903442383]
+        }
+    },
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Ristoro Roccolo',
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [45.641587880901234, 8.954200744628906]
+        }
+    }
+       {
+        type: 'Feature',
+        properties: {
+            title: 'Ristoro Visconta',
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [45.65004837830723, 45.65004837830723]
+        }
+    }]
+};
+
+myLayer.setGeoJSON(geoJson);
+myLayer.on('mouseover', function(e) {
+    e.layer.openPopup();
+});
+myLayer.on('mouseout', function(e) {
+    e.layer.closePopup();
+});
+</script>
+
+
+</body>
+</html>
