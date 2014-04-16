@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <meta charset=utf-8 />
@@ -18,7 +18,7 @@
 
 <div id='map'></div>
 <script>
-var map = L.mapbox.map('map', 'examples.map-20v6611k').setView([45.641587880901234, 8.954200744628906], 12);
+var map = L.mapbox.map('map', 'examples.map-20v6611k').setView([39.12367, -76.81229], 9);
 
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
@@ -27,31 +27,21 @@ var geoJson = {
     features: [{
         type: 'Feature',
         properties: {
-            title: 'Ristoro Massina',
+            title: 'Washington, D.C.',
         },
         geometry: {
             type: 'Point',
-            coordinates: [45.64008765934397, 8.965272903442383]
+            coordinates: [-77.03201, 38.90065]
         }
     },
     {
         type: 'Feature',
         properties: {
-            title: 'Ristoro Roccolo',
+            title: 'Baltimore, MD',
         },
         geometry: {
             type: 'Point',
-            coordinates: [45.641587880901234, 8.954200744628906]
-        }
-    }
-       {
-        type: 'Feature',
-        properties: {
-            title: 'Ristoro Visconta',
-        },
-        geometry: {
-            type: 'Point',
-            coordinates: [45.65004837830723, 45.65004837830723]
+            coordinates: [-76.60767, 39.28755]
         }
     }]
 };
