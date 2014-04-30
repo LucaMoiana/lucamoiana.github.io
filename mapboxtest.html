@@ -21,9 +21,11 @@
 <script>
 var map = L.mapbox.map('map','lucamoiana.i2f5jfg2').setView([45.642, 8.954], 14);
 var ristori = L.mapbox.featureLayer('lucamoiana.i09fgicl');
+var corto = L.mapbox.tileLayer('lucamoiana.i057npjm');
+var medio = L.mapbox.tileLayer('lucamoiana.i0588kkf');
+var lungo = L.mapbox.tileLayer('lucamoiana.i058i92l');
+var parcheggi = L.mapbox.featureLayer('lucamoiana.i2f34pn3');
 
-
-L.layerGroup([ristori, corto])
 
 L.control.layers({
     'Base Map': L.mapbox.tileLayer('examples.map-zgrqqx0w').addTo(map),
