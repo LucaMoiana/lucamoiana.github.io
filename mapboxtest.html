@@ -22,8 +22,11 @@
 var map = L.mapbox.map('map','lucamoiana.i2f5jfg2').setView([45.642, 8.954], 14);
 var ristori = L.mapbox.featureLayer('lucamoiana.i09fgicl');
 var corto = L.mapbox.tileLayer('lucamoiana.i057npjm');
+var corto_ristoro = L.mapbox.featureLayer('lucamoiana.i057npjm');
 var medio = L.mapbox.tileLayer('lucamoiana.i0588kkf');
+var medio_ristoro = L.mapbox.featureLayer('lucamoiana.i0588kkf');
 var lungo = L.mapbox.tileLayer('lucamoiana.i058i92l');
+var lungo_ristoro = L.mapbox.featureLayer('lucamoiana.i058i92l');
 var parcheggi = L.mapbox.featureLayer('lucamoiana.i2f34pn3');
 
 
@@ -32,11 +35,9 @@ L.control.layers({
     'Grey Map': L.mapbox.tileLayer('examples.map-20v6611k')
 }, {
     
-    '20Km': L.mapbox.tileLayer('lucamoiana.i058i92l'),
-    '14Km': L.mapbox.tileLayer('lucamoiana.i0588kkf'),
-    '6Km': L.mapbox.tileLayer('lucamoiana.i057npjm'),
-    'Gruppo': L.layerGroup([ristori, corto]).addTo(map),
-    'Ristori': L.mapbox.featureLayer('lucamoiana.i09fgicl'),
+    '20Km': L.layerGroup([lungo_ristoro, lungo]).addTo(map),,
+    '14Km': L.layerGroup([medio_ristoro, medio]).addTo(map),
+    '6Km': L.layerGroup([corto_ristoro, corto]).addTo(map),
     'Parcheggi':L.mapbox.featureLayer('lucamoiana.i2f34pn3')
     
     
