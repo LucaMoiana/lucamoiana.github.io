@@ -1,30 +1,55 @@
 <html>
 <head>
-<script src="http://openweathermap.org/js/OWM.OpenLayers.1.3.4.js" ></script>
+<title>Open Weather Map</title>
+    <style type="text/css">
+        #map {
+            width: 100%;
+            height: 99%;
+            border: 1px solid black;
+        }
+    </style>
+
 </head>
 <body  onload="init()">
- <div id="basicMap"></div>
+<div id="basicMap"></div>
 </body>
-<script type="text/javascript">
-function init() {
-//Center of map
-var lat = 40.7143528; // <--- some dynamic location
-var lon = -74.0059731; //<--- some dynamic location
-var map = new OpenLayers.Map("basicMap");
-var fromProjection = new OpenLayers.Projection("EPSG:3857");   // Transform from WGS 1984
-var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
-// Create overlays
-//  OSM
-var mapnik = new OpenLayers.Layer.OSM();
-// Stations
-var stations = new OpenLayers.Layer.Vector.OWMStations("Stations");
-// Current weather
-var city = new OpenLayers.Layer.Vector.OWMWeather("Weather");
-//Addind maps
-map.addLayers([mapnik, stations, city]);
-map.setCenter( position, 5 );
- }
 
- </script>
- </html>
+<script src="http://openlayers.org/api/OpenLayers.js"></script>
+<script src="http://openweathermap.org/js/OWM.OpenLayers.1.3.4.js" ></script>
+
+<script type="text/javascript">
+var map;
+function init() {
+
+	//Center  ( mercator coordinates )
+	var lat = 45.642; 
+	var lon = 8.954;
+
+// if  you use WGS 1984 coordinate you should  convert to mercator
+lonlat.transform(
+new OpenLayers.Projection("EPSG:3857"), // transform from WGS 1984
+new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
+);
+
+	var lonlat = new OpenLayers.LonLat(lon, lat);
+
+        map = new OpenLayers.Map("basicMap");
+
+	// Create overlays
+	// map layer OSM
+        var mapnik = new OpenLayers.Layer.OSM();
+	// Create station layer
+	var stations = new OpenLayers.Layer.Vector.OWMStations("Stations");
+	// Create weather layer 
+	var city = new OpenLayers.Layer.Vector.OWMWeather("Weather");
+
+	//connect layers to map
+	map.addLayers([mapnik, stations, city]);
+
+	// Add Layer switcher
+	map.addControl(new OpenLayers.Control.LayerSwitcher());       	
+
+	map.setCenter( lonlat, 10 );
+}
+</script>
+</html>
