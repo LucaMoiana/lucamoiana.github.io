@@ -1,55 +1,125 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>Open Weather Map</title>
-    <style type="text/css">
-        #map {
-            width: 100%;
-            height: 99%;
-            border: 1px solid black;
-        }
-    </style>
+<meta charset=utf-8 />
+<title>V Maratonina del Rugareto</title>
 
-</head>
-<body  onload="init()">
-<div id="basicMap"></div>
-</body>
-
-<script src="http://openlayers.org/api/OpenLayers.js"></script>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
 <script src="http://openweathermap.org/js/OWM.OpenLayers.1.3.4.js" ></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
 
-<script type="text/javascript">
-var map;
-function init() {
 
-	//Center  ( mercator coordinates )
-	var lat = 45.642; 
-	var lon = 8.954;
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
 
-// if  you use WGS 1984 coordinate you should  convert to mercator
-lonlat.transform(
-new OpenLayers.Projection("EPSG:3857"), // transform from WGS 1984
-new OpenLayers.Projection("EPSG:900913") // to Spherical Mercator Projection
-);
 
-	var lonlat = new OpenLayers.LonLat(lon, lat);
+<style>
+#map-ui {
+    position: absolute;
+    top: 75px;
+    left: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+}
 
-        map = new OpenLayers.Map("basicMap");
+#map-ui a {
+    font: normal 13px/18px 'Helvetica Neue', Helvetica, sans-serif;
+    background: #FFF;
+    color: #3C4E5A;
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #BBB;
+    border-bottom-width: 0;
+    min-width: 138px;
+    padding: 10px;
+    text-decoration: none;
+}
 
-	// Create overlays
-	// map layer OSM
-        var mapnik = new OpenLayers.Layer.OSM();
-	// Create station layer
-	var stations = new OpenLayers.Layer.Vector.OWMStations("Stations");
-	// Create weather layer 
-	var city = new OpenLayers.Layer.Vector.OWMWeather("Weather");
+#map-ui a:hover {
+    background: #ECF5FA;
+}
 
-	//connect layers to map
-	map.addLayers([mapnik, stations, city]);
+#map-ui li:last-child a {
+    border-bottom-width: 1px;
+    -webkit-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+}
 
-	// Add Layer switcher
-	map.addControl(new OpenLayers.Control.LayerSwitcher());       	
+#map-ui li:first-child a {
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+}
 
-	map.setCenter( lonlat, 10 );
+#map-ui a.active {
+    background: #3887BE;
+    border-color: #3887BE;
+    border-top-color: #FFF;
+    color: #FFF;
+}
+</style>
+<ul id='map-ui'></ul>
+<div id='map'></div>
+<script>
+
+
+var map = L.mapbox.map('map','lucamoiana.i2f5jfg2').setView([45.642, 8.954], 14);
+var ui = document.getElementById('map-ui');
+var city = new OpenLayers.Layer.Vector.OWMWeather("Weather")
+
+ 
+
+
+ 
+ 
+    
+//addLayer
+addLayer(L.mapbox.featureLayer('city'), 'Meteo', 6)
+addLayer(L.mapbox.tileLayer('lucamoiana.i057npjm'), '6 Km', 5);
+addLayer(L.mapbox.tileLayer('lucamoiana.i0588kkf'), '14 Km', 4);
+addLayer(L.mapbox.tileLayer('lucamoiana.i058i92l'), '20 Km', 3);
+addLayer(L.mapbox.featureLayer('lucamoiana.i09fgicl'), 'Ristori', 2);
+addLayer(L.mapbox.featureLayer('lucamoiana.i2f34pn3'), 'Parcheggi', 1);
+
+function addLayer(layer, name, zIndex) {
+    layer
+        .setZIndex(zIndex)
+        .addTo(map);
+
+    // Create a simple layer switcher that toggles layers on
+    // and off.
+    var item = document.createElement('li');
+    var link = document.createElement('a');
+
+    link.href = '#';
+    link.className = 'active';
+    link.innerHTML = name;
+
+    link.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+            this.className = '';
+        } else {
+            map.addLayer(layer);
+            this.className = 'active';
+        }
+    };
+
+    item.appendChild(link);
+    ui.appendChild(item);
 }
 </script>
+
+
+</body>
 </html>
