@@ -91,7 +91,7 @@ var ui = document.getElementById('map-ui');
  
     
 //addLayer
-addLayer(L.layerGroup([corto, corto_ristoro]), '6 Km', 5);
+addLayer(L.layerGroup([corto, corto_ristoro, corto_km]), '6 Km', 5);
 addLayer(L.layerGroup([medio, corto_ristoro, medio_ristoro]), '14 Km', 4);
 addLayer(L.layerGroup([lungo, corto_ristoro, lungo_ristoro]), '20 Km', 3);
 addLayer(L.mapbox.featureLayer('lucamoiana.i2f34pn3'), 'Parcheggi', 1);
