@@ -93,9 +93,9 @@ var ui = document.getElementById('map-ui');
  
     
 //addLayer
-addLayer(L.layerGroup([corto_km, corto, corto_ristoro]), '6 Km', 5);
-addLayer(L.layerGroup([medio_km, medio, corto_ristoro, medio_ristoro]), '14 Km', 4);
-addLayer(L.layerGroup([var lungo_km, lungo, corto_ristoro, lungo_ristoro]), '20 Km', 3);
+addLayer(L.layerGroup([corto_km, corto, corto_ristoro]), '6 Km', 4);
+addLayer(L.layerGroup([medio_km, medio, corto_ristoro, medio_ristoro]), '14 Km', 3);
+addLayer(L.layerGroup([lungo_km, lungo, corto_ristoro, lungo_ristoro]), '20 Km', 2);
 addLayer(L.mapbox.featureLayer('lucamoiana.i2f34pn3'), 'Parcheggi', 1);
 
 function addLayer(layer, name, zIndex) {
