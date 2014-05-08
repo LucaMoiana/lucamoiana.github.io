@@ -74,7 +74,6 @@ var map = L.mapbox.map('map','lucamoiana.i2f5jfg2').setView([45.642, 8.954], 14)
 var ristori = L.mapbox.featureLayer('lucamoiana.i09fgicl');
 var corto = L.mapbox.tileLayer('lucamoiana.i057npjm');
 var corto_ristoro = L.mapbox.featureLayer('lucamoiana.i057npjm');
-var corto_km = L.mapbox.featureLayer('lucamoiana.i6e8h57a');
 var medio = L.mapbox.tileLayer('lucamoiana.i0588kkf');
 var medio_ristoro = L.mapbox.featureLayer('lucamoiana.i0588kkf');
 var lungo = L.mapbox.tileLayer('lucamoiana.i058i92l');
@@ -91,7 +90,7 @@ var ui = document.getElementById('map-ui');
  
     
 //addLayer
-addLayer(L.layerGroup([corto_km]), '6 Km', 5);
+addLayer(L.layerGroup([corto, corto_ristoro]), '6 Km', 5);
 addLayer(L.layerGroup([medio, corto_ristoro, medio_ristoro]), '14 Km', 4);
 addLayer(L.layerGroup([lungo, corto_ristoro, lungo_ristoro]), '20 Km', 3);
 addLayer(L.mapbox.featureLayer('lucamoiana.i2f34pn3'), 'Parcheggi', 1);
