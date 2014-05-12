@@ -8,6 +8,11 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
 <script src="http://openweathermap.org/js/OWM.OpenLayers.1.3.4.js" ></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+<link rel="stylesheet" href="http://leaflet.cloudmade.com/dist/leaflet.css" />
+<!--[if lte IE 8]><link rel="stylesheet" href="http://leaflet.cloudmade.com/dist/leaflet.ie.css" /><![endif]-->
+<script src="http://leaflet.cloudmade.com/dist/leaflet.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://openweathermap.org/js/leaflet-layer.js"></script>
 
 
 <style>
@@ -79,7 +84,7 @@ var medio_ristoro = L.mapbox.featureLayer('lucamoiana.i0588kkf');
 var lungo = L.mapbox.tileLayer('lucamoiana.i058i92l');
 var lungo_ristoro = L.mapbox.featureLayer('lucamoiana.i058i92l');
 var parcheggi = L.mapbox.featureLayer('lucamoiana.i2f34pn3');
-var city = L.OWM.OWMWeather("Weather");
+var stations = new OpenLayers.Layer.Vector.OWMStations("Stations");
 var ui = document.getElementById('map-ui');
 //var city = OpenLayers.Layer.Vector.OWMWeather("Weather");
 
@@ -91,6 +96,7 @@ var ui = document.getElementById('map-ui');
  
     
 //addLayer
+addLayer(L.layerGroup([corto, corto_ristoro]), '6 Km', 5);
 addLayer(L.layerGroup([corto, corto_ristoro]), '6 Km', 5);
 addLayer(L.layerGroup([medio, corto_ristoro, medio_ristoro]), '14 Km', 4);
 addLayer(L.layerGroup([lungo, corto_ristoro, lungo_ristoro]), '20 Km', 3);
