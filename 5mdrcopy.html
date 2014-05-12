@@ -19,6 +19,17 @@
 
 
 <style>
+
+#meteo
+{
+  position:absolute;
+  top:75px;
+  right:10px;
+  z-index:10;
+  
+  background-color:RGBA(0,0,0,0.5);
+}
+
 #map-ui {
     position: absolute;
     top: 75px;
@@ -67,8 +78,8 @@
 </style>
 
 
-<div style='position:absolute;z-index:10;right:10px;background-color:RGBA(0,0,0,0.5);top:10px;'>
-<h2>METEO:</h2>
+<div id='meteo'>
+<p>METEO:</p>
 <iframe src='http://api.openweathermap.org/data/2.5/weather?id=3178640&mode=html' height='150px' width='150px' frameborder='0'></iframe>
 </div>
 <ul id='map-ui'></ul>
