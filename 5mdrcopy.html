@@ -19,6 +19,32 @@
 
 
 <style>
+
+#meteo
+{
+  margin:auto;
+  border-bottom-width: 1px;
+  -webkit-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid #BBB;
+  font: normal 13px/18px 'Helvetica Neue', Helvetica, sans-serif;
+  position:absolute;
+  top:75px;
+  right:10px;
+  z-index:10;
+  /*background-color:RGBA(0,0,0,0.5);*/
+  background: #3887BE;
+  border-color: #3887BE;
+  border-top-color: #FFF;
+  color: #FFF;
+}
+
+#meteo p
+{
+  text-align:center;
+  }
+
+
 #map-ui {
     position: absolute;
     top: 75px;
@@ -65,44 +91,37 @@
     color: #FFF;
 }
 </style>
+
+
+<div id='meteo'>
+<p>METEO:</p>
+<iframe src='http://api.openweathermap.org/data/2.5/weather?id=3178640&mode=html' height='150px' width='150px' frameborder='0'></iframe>
+</div>
 <ul id='map-ui'></ul>
 <div id='map'></div>
+
+
+
 <script>
 
 
 var map = L.mapbox.map('map','lucamoiana.i2f5jfg2').setView([45.642, 8.954], 14);
-var ristori = L.mapbox.featureLayer('lucamoiana.i09fgicl');
+//var ristori = L.mapbox.featureLayer('lucamoiana.i09fgicl');
 var corto = L.mapbox.tileLayer('lucamoiana.corto_pti');
 var corto_ristoro = L.mapbox.featureLayer('lucamoiana.i057npjm');
-var corto_km = L.mapbox.tileLayer('lucamoiana.corto_pti');
-var medio = L.mapbox.tileLayer('lucamoiana.i0588kkf');
+var medio = L.mapbox.tileLayer('lucamoiana.percorso2');
 var medio_ristoro = L.mapbox.featureLayer('lucamoiana.i0588kkf');
-var medio_km = L.mapbox.tileLayer('lucamoiana.medio_pti_km');
-var lungo = L.mapbox.tileLayer('lucamoiana.i058i92l');
+var lungo = L.mapbox.tileLayer('lucamoiana.percorso3');
 var lungo_ristoro = L.mapbox.featureLayer('lucamoiana.i058i92l');
-var lungo_km = L.mapbox.tileLayer('lucamoiana.lungo_pti_km');
 var parcheggi = L.mapbox.featureLayer('lucamoiana.i2f34pn3');
 var ui = document.getElementById('map-ui');
-    
-//var city = OpenLayers.Layer.Vector.OWMWeather("Weather");
 
-
- 
-
-
- 
  
     
 //addLayer
-<<<<<<< HEAD
-addLayer(L.layerGroup([corto, corto_ristoro, corto_pti]), '6 Km', 5);
-addLayer(L.layerGroup([medio, corto_ristoro, medio_ristoro]), '14 Km', 4);
-addLayer(L.layerGroup([lungo, corto_ristoro, lungo_ristoro]), '20 Km', 3);
-=======
-addLayer(L.layerGroup([corto, corto_ristoro, corto_km]), '6 Km', 4);
-addLayer(L.layerGroup([medio, corto_ristoro, medio_ristoro, medio_km]), '14 Km', 3);
-addLayer(L.layerGroup([lungo, corto_ristoro, lungo_ristoro, lungo_km]), '20 Km', 2);
->>>>>>> FETCH_HEAD
+addLayer(L.layerGroup([corto, corto_ristoro]), '6 Km', 4);
+addLayer(L.layerGroup([medio, medio_ristoro, corto_ristoro]), '14 Km', 3);
+addLayer(L.layerGroup([lungo, medio_ristoro, corto_ristoro, lungo_ristoro,  ]), '20 Km', 2);
 addLayer(L.mapbox.featureLayer('lucamoiana.i2f34pn3'), 'Parcheggi', 1);
 
 function addLayer(layer, name, zIndex) {
