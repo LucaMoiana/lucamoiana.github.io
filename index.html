@@ -19,8 +19,10 @@
 
 <script>
 
-var map = L.mapbox.map('map', 'examples.map-i86nkdio')
-.setView([45.8972, 6.9186], 11);
+var map = L.mapbox.map('map', 'examples.map-i86nkdio', {
+	minZoom: 8,
+    maxZoom: 15,
+    }).setView([45.8972, 6.9186], 11);
 
 var totalefiltrato10;
 
