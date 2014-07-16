@@ -32,6 +32,14 @@ $.getJSON('data/totalefiltrato10.geojson', function(data) {
     totalefiltrato10.setStyle({color: 'red'});
 });
 
+var foto;
+
+$.getJSON('data/foto.geojson', function(data) {
+    totalefiltrato10 = L.mapbox.featureLayer(data);
+    totalefiltrato10.addTo(map);
+    totalefiltrato10.setStyle({color: 'red'});
+});
+
 var featureLayer = L.mapbox.featureLayer()
     .loadURL('data/foto.geojson')
     .addTo(map);
