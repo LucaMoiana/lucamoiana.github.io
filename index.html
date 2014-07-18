@@ -40,6 +40,9 @@ $.getJSON('data/foto.geojson', function(data) {
     totalefiltrato10.setStyle({color: 'red'});
 });
 
+var locations = L.mapbox.featureLayer().addTo(map)
+locations.loadURL('//data/foto2.geojson');
+
 var featureLayer = L.mapbox.featureLayer()
     .loadURL('data/foto.json')
     .addTo(map);
