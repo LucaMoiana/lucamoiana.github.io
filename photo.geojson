@@ -3,6 +3,7 @@
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
                                                                                 
 "features": [
+<<<<<<< HEAD:data/foto.geojson
 { "type": "Feature", "properties": { "Name": "P8280062.JPG", "timestamp": "2012\/08\/28  6:43:42+00" }, "geometry": { "type": "Point", "coordinates": [ 6.779337432235479, 45.736004523932934, 1888.0 ] } },
 { "type": "Feature", "properties": { "Name": "P8270038.JPG", "timestamp": "2012\/08\/27 12:32:04+00" }, "geometry": { "type": "Point", "coordinates": [ 6.708525521680713, 45.733547117561102, 2357.800048828125 ] } },
 { "type": "Feature", "properties": { "Name": "P8270039.JPG", "timestamp": "2012\/08\/27 12:32:12+00" }, "geometry": { "type": "Point", "coordinates": [ 6.708537675440311, 45.73349816724658, 2358.0 ] } },
@@ -43,4 +44,14 @@
 { "type": "Feature", "properties": { "Name": "P8240002.JPG", "timestamp": "2012\/08\/24  9:13:38+00" }, "geometry": { "type": "Point", "coordinates": [ 7.055779891088605, 45.870083458721638, 1887.5999755859375 ] } },
 { "type": "Feature", "properties": { "Name": "P8240003.JPG", "timestamp": "2012\/08\/24  9:14:06+00" }, "geometry": { "type": "Point", "coordinates": [ 7.055495157837868, 45.869945408776402, 1884.5999755859375 ] } }
 ]
+=======
+{ 
+"type": "Feature", 
+"geometry": 
+{ "type": "Point", "coordinates": [ 6.779337432235479, 45.736004523932934, 1888.0 ] 
+},
+"properties": {
+    "name": "Dinagat Islands"
+  }
+>>>>>>> FETCH_HEAD:photo.geojson
 }

@@ -11,6 +11,7 @@
   </style>
 </head>
 <body>
+<<<<<<< HEAD:index.html
 <p class="p1">&lt;!DOCTYPE html&gt;</p>
 <p class="p1">&lt;html&gt;</p>
 <p class="p1">&lt;body&gt;</p>
@@ -18,5 +19,38 @@
 <p class="p1">&lt;p&gt;I'm hosted with GitHub Pages.&lt;/p&gt;</p>
 <p class="p1">&lt;/body&gt;</p>
 <p class="p1">&lt;/html&gt;</p>
+=======
+
+<div id='map'></div>
+
+<script>
+
+var map = L.mapbox.map('map', 'examples.map-i86nkdio', {
+	minZoom: 8,
+    maxZoom: 15,
+    }).setView([45.8972, 6.9186], 11);
+
+var totalefiltrato10;
+
+$.getJSON('data/totalefiltrato10.geojson', function(data) {
+    totalefiltrato10 = L.mapbox.featureLayer(data);
+    totalefiltrato10.addTo(map);
+    totalefiltrato10.setStyle({color: 'red'});
+});
+
+var foto;
+
+$.getJSON('data/foto.geojson', function(data) {
+    totalefiltrato10 = L.mapbox.featureLayer(data);
+    totalefiltrato10.addTo(map);
+    totalefiltrato10.setStyle({color: 'red'});
+});
+
+var locations = L.mapbox.featureLayer().addTo(map)
+locations.loadURL('/data/exp_fotolink.js');
+
+</script>
+
+>>>>>>> FETCH_HEAD:tmb.html
 </body>
 </html>
