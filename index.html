@@ -1,42 +1,22 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta charset=utf-8 />
-<title>Polylines</title>
-<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
-<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:0; bottom:0; width:100%; }
-</style>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265.21">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 17.0px Courier; color: #eeeb82; background-color: #3c3c3c}
+  </style>
 </head>
 <body>
-
-<div id='map'></div>
-
-<script>
-
-var map = L.mapbox.map('map', 'examples.map-i86nkdio', {
-	minZoom: 8,
-    maxZoom: 15,
-    }).setView([45.8972, 6.9186], 11);
-
-var totalefiltrato10;
-
-$.getJSON('data/totalefiltrato10.geojson', function(data) {
-    totalefiltrato10 = L.mapbox.featureLayer(data);
-    totalefiltrato10.addTo(map);
-    totalefiltrato10.setStyle({color: 'red'});
-});
-
-var featureLayer = L.mapbox.featureLayer()
-    .loadURL('data/foto.geojson')
-    .addTo(map);
-
-</script>
-
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;h1&gt;Hello World&lt;/h1&gt;</p>
+<p class="p1">&lt;p&gt;I'm hosted with GitHub Pages.&lt;/p&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
 </body>
 </html>
