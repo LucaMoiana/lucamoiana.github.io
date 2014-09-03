@@ -120,10 +120,10 @@ var ui = document.getElementById('map-ui');
  
     
 //addLayer
-addLayer(L.mapbox.tileLayer('cortissimo'), '15 Km', 4);
-addLayer(L.mapbox.tileLayer(corto), '30 Km', 3);
-addLayer(L.layerGroup(trail,), '55 Km', 2);
-addLayer(L.layerGroup(ultratrail,), '87 Km', 1);    
+addLayer(L.layerGroup('cortissimo'), '15 Km', 4);
+addLayer(L.layerGroup(corto), '30 Km', 3);
+addLayer(L.layerGroup(trail), '55 Km', 2);
+addLayer(L.layerGroup(ultratrail), '87 Km', 1);     
 
 function addLayer(layer, name, zIndex) {
     layer
