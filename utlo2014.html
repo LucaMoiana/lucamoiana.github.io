@@ -107,23 +107,23 @@
 
 var map = L.mapbox.map('map','examples.ik7djhcc').setView([45.8688, 8.4200], 12);
 
-var cortissimo = L.mapbox.tileLayer('lucamoiana.utlo_15km');
+//var cortissimo = L.mapbox.tileLayer('lucamoiana.utlo_15km');
 
-var corto = L.mapbox.tileLayer('lucamoiana.utlo_30Km');
+//var corto = L.mapbox.tileLayer('lucamoiana.utlo_30Km');
 
-var trail = L.mapbox.tileLayer('lucamoiana.utlo_57Km');
+//var trail = L.mapbox.tileLayer('lucamoiana.utlo_57Km');
 
-var ultratrail = L.mapbox.tileLayer('lucamoiana.utlo_87Km');
+//var ultratrail = L.mapbox.tileLayer('lucamoiana.utlo_87Km');
 
-var ui = document.getElementById('map-ui');
+//var ui = document.getElementById('map-ui');
 
  
     
 //addLayer
-addLayer(L.layerGroup('cortissimo'), '15 Km', 4);
-addLayer(L.layerGroup(corto), '30 Km', 3);
-addLayer(L.layerGroup(trail), '55 Km', 2);
-addLayer(L.layerGroup(ultratrail), '87 Km', 1);     
+addLayer(L.mapbox.tileLayer('lucamoiana.utlo_15km'), '15 km', 1);
+addLayer(L.mapbox.tileLayer('lucamoiana.utlo_30Km'), '30 km', 2);
+addLayer(L.mapbox.tileLayer('lucamoiana.utlo_57Km'), '57 km', 3);
+addLayer(L.mapbox.tileLayer('lucamoiana.utlo_87Km'), '57 km', 4); 
 
 function addLayer(layer, name, zIndex) {
     layer
