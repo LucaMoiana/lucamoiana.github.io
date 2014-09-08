@@ -8,6 +8,7 @@
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
 <script src="http://openweathermap.org/js/OWM.OpenLayers.1.3.4.js" ></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+<script type="text/javascript" src="./lib/leaflet-gpx/gpx.js"></script>
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
 
 
@@ -115,6 +116,27 @@ var medio = omnivore.gpx('utlo30.gpx');
 var lungo = omnivore.gpx('utlo57.gpx');
 var lunghissimo = omnivore.gpx('utlo87.gpx');
 var ui = document.getElementById('map-ui');
+
+//ELAVATION
+
+		var el = L.control.elevation();
+		el.addTo(map);
+		var g=new L.GPX("utlo87.gpx", {
+			async: true,
+			 marker_options: {
+			    startIconUrl: './lib/leaflet-gpx/pin-icon-start.png',
+			    endIconUrl: './lib/leaflet-gpx/pin-icon-end.png',
+			    shadowUrl: './lib/leaflet-gpx/pin-shadow.png'
+			  }
+		});
+		g.on('loaded', function(e) {
+		  		map.fitBounds(e.target.getBounds());
+		});
+		g.on("addline",function(e){
+			el.addData(e.line);
+		});
+		g.addTo(map);
+		map.addLayer(service);
 
  
     
