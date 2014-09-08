@@ -17,7 +17,7 @@
 <div id='map'></div>
 
 <script>
-//L.mapbox.accessToken = 'pk.eyJ1IjoibHVjYW1vaWFuYSIsImEiOiJfeUttT1pzIn0.7_LM4jNrpSFn7a9f6QqiYA';
+L.mapbox.accessToken = 'pk.eyJ1IjoibHVjYW1vaWFuYSIsImEiOiJfeUttT1pzIn0.7_LM4jNrpSFn7a9f6QqiYA';
 var map = L.mapbox.map('map', 'lucamoiana.jc4a9gcl');
 
 // omnivore will AJAX-request this file behind the scenes and parse it:
@@ -25,17 +25,16 @@ var map = L.mapbox.map('map', 'lucamoiana.jc4a9gcl');
 // - The file must either be on the same domain as the page that requests it,
 //   or both the server it is requested from and the user's browser must
 //   support CORS.
-
+var utlo15 = omnivore.gpx('utlo15.gpx')
+    .addTo(map);
+var utlo30 = omnivore.gpx('utlo30.gpx')
+    .addTo(map);
+var utlo55 = omnivore.gpx('utlo55.gpx')
+    .addTo(map);
 var utlo87 = omnivore.gpx('utlo87.gpx')
     .on('ready', function() {
         map.fitBounds(utlo87.getBounds());
     })
-    .addTo(map);
-var utlo55 = omnivore.gpx('utlo55.gpx')
-    .addTo(map);
-var utlo30 = omnivore.gpx('utlo30.gpx')
-    .addTo(map);
-var utlo15 = omnivore.gpx('utlo15.gpx')
     .addTo(map);
 </script>
 </body>
