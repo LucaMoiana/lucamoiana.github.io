@@ -14,3 +14,5 @@ X Load Mapbox Tiles
 - Create Elevation profile using Leaflet.Elevation
 - Add scale bar
 - Add title
+- Style track and start/finish
+- Fix popup from opening at page load
