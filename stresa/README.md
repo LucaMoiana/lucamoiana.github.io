@@ -11,6 +11,7 @@ X Create map
 X Load Mapbox Tiles
 
 X Load track from external GeoJson (stresa.geojson)
+
 - Load start/finish from external GeoJson (pti.geojson)
 - Create Elevation profile using Leaflet.Elevation
 - Add scale bar
@@ -18,3 +19,5 @@ X Load track from external GeoJson (stresa.geojson)
 - Style track and start/finish
 - Fix popup from opening at page load
 - Add weather forecast
+- Style track
+- Change color/ Styel for start and finish
