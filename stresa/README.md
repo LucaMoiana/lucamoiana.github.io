@@ -8,6 +8,7 @@ Step:
 
 X Create map
 X Load Mapbox Tiles
+
 - Load track from external GeoJson (stresa.geojson)
 - Load start/finish from external GeoJson (pti.geojson)
 - Create Elevation profile using Leaflet.Elevation
