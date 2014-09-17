@@ -8,10 +8,19 @@
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-        <!-- Leaflet JS -->
+    <!-- Leaflet JS -->
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <!-- Added for  leaflet.Elevation -->
+    <link rel="stylesheet" href="../dist/Leaflet.Elevation-0.0.2.css" />
+    <script type="text/javascript" src="../dist/Leaflet.Elevation-0.0.2.min.js"></script>
+    <!-- Added for icone maki -->
+    <script src="Leaflet.MakiMarkers.js"></script>
+    <!-- JQuery -->
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Added for omnivore -->
+    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.1.2/leaflet-omnivore.min.js'></script>
 
-    
+    <!-- ACSS for map div -->
     <style>
 	   html, body, #map {
 	      height:100%;
@@ -27,67 +36,44 @@
 
     <div id="map"></div>
     
-    <!-- Aggiunti per Elevation -->
-	<link rel="stylesheet" href="../dist/Leaflet.Elevation-0.0.2.css" />
-    <script type="text/javascript" src="../dist/Leaflet.Elevation-0.0.2.min.js"></script>
-        <!-- Aggiunto per icone maki -->
-    <script src="Leaflet.MakiMarkers.js"></script>
-    
-    <!-- JQuery -->
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 
-
-   
-
-    
- <!-- Aggiunto per omnivore -->
-
-    <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.1.2/leaflet-omnivore.min.js'></script>
-
-    
-    <!-- places.geojson !-->
-   
-    <!-- places.geojson -->
-    
-    
     <script type="text/javascript">
 
         
-    <!--Centra la mappa e carica mapbox outdoors tile --!>
+    <!-- Add MapBox tiles -->
     
     var map = new L.Map('map');
     
     var url = 'http://{s}.tiles.mapbox.com/v3/lucamoiana.jc4a9gcl/{z}/{x}/{y}.png',
 			attr ='<a href="https://www.mapbox.com/about/maps">&copy; Mapbox</a> <a href="http://openstreetmap.org/copyright">&copy; OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>',
 			service = new L.TileLayer(url, {attribution: attr});
-        
+    
+    <!-- Center map -->    
     var bounds = new L.LatLngBounds(new L.LatLng(45.8272387362,8.50540004678), new L.LatLng(45.8869498135,8.6038676928));
 
     map.addLayer(service).fitBounds(bounds);
         
-<!--Carica tracciato --!>
+    <!--Added track from external geojson -->
 
     var percorso = L.geoJson().addTo(map);
     $.getJSON("data/stresa.geojson", function(json) {
     percorso.addData(json);
-});
-
-
-<!--Carica JSON del traguardo--!>
+    });
+    <!-- Create JSON Markers for start and  finish with popup -->
     
-L.marker([45.884010493755341, 8.537027388811111]).addTo(map)
-    .bindPopup('PARTENZA')
-    .openPopup();
+    L.marker([45.884010493755341, 8.537027388811111]).addTo(map)
+        .bindPopup('PARTENZA')
+        .openPopup();
 
-L.marker([45.885521080344915, 8.536947425454855]).addTo(map)
-    .bindPopup('ARRIVO')
-    .openPopup();
-        
-        
-<!--POP UP traguardo--!>
-    
+    L.marker([45.885521080344915, 8.536947425454855]).addTo(map)
+        .bindPopup('ARRIVO')
+        .openPopup();
+ 
 
-<!--Crea profilo elevazione --!>
+    <!--Create an elevation profile using leafletjs.elevation -->
+
+    <!--Add scalebar -->
+    L.control.scale().addTo(map)
     
 
     
