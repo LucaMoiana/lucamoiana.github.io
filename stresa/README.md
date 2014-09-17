@@ -17,3 +17,4 @@ X Load track from external GeoJson (stresa.geojson)
 - Add title
 - Style track and start/finish
 - Fix popup from opening at page load
+- Add weather forecast
