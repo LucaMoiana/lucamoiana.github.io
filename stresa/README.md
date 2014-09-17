@@ -7,6 +7,7 @@ Create a map for trail running
 Step:
 
 X Create map
+
 X Load Mapbox Tiles
 
 X Load track from external GeoJson (stresa.geojson)
