@@ -72,7 +72,7 @@
     <!--Added track from external geojson -->
     //all used options are the default values
     var el = L.control.elevation({
-        position: "topright",
+        position: "bottomright",
         theme: "steelblue-theme", //default: lime-theme
         width: 600,
         height: 125,
@@ -130,7 +130,7 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4>US Population Density</h4>';
+    this._div.innerHTML = '<h4><span style="text-align:center"><h2>Stresa Night Trail - 2014</h2><br/><h3>Lago Maggiore Trail®</h3></span></h4>';
 };
 
 info.addTo(map);
