@@ -35,7 +35,7 @@ social:
     
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
-  - lines: ,
+  - lines: Monstesacro ,
     - Rome,
     - Italy.
 email: luca_moiana@hotmail.com
