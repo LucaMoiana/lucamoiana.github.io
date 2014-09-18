@@ -1,8 +1,8 @@
 ### GENERAL SETTINGS ###
 
 # Site settings
-title: lucamoiana.
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: luca moiana
+description: "My personal page for GIS, WEBMAPS projects usign leafletjs or openlayers"
 baseurl: ""
 url: "http://yourdomain.com"
 
@@ -26,15 +26,15 @@ colors:  #in hex code if not noted else
 # Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
 social:
   - title: dribbble
-    url:
+    url: lucamoiana
   - title: facebook
-    url:
+    url: lucamoiana
   - title: twitter
-    url: 
+    url: lucamoiana
   - title: instagram
-    url: 
+    url: lucamoiana
   - title: tumblr
-    url: 
+    url: lucamoiana
     
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
