@@ -35,8 +35,7 @@ social:
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
   - lines: 
-    - Roma,
-    - Italy.
+    - Roma, Italy.
 email: luca_moiana@hotmail.com
 skype: lucamoiana
 
