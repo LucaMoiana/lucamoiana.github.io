@@ -99,7 +99,10 @@
     <!--Create an elevation profile using leafletjs.elevation -->
 
     <!--Add scalebar -->
-    L.control.scale().addTo(map)
+    	L.control.scale({
+	position: 'bottomright',
+	imperial: false
+}).addTo(map);
     
 
     
