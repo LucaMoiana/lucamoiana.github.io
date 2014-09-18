@@ -69,7 +69,7 @@
 
     map.addLayer(service).fitBounds(bounds);
         
-    <!--Added track from external geojson -->
+    <!--Create an elevation profile using leafletjs.elevation -->
     //all used options are the default values
     var el = L.control.elevation({
         position: "bottomleft",
@@ -94,6 +94,7 @@
         collapsed: false    //collapsed mode, show chart on click or mouseover
     });
     el.addTo(map);
+    <!--Added track from external geojson -->
     var percorso;
     $.getJSON("data/stresa.geojson", function(json) {
         percorso = L.geoJson(json,{
@@ -111,7 +112,7 @@
         .openPopup();
  
 
-    <!--Create an elevation profile using leafletjs.elevation -->
+    
 
     <!--Add scalebar -->
     	L.control.scale({
