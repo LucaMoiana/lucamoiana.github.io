@@ -13,7 +13,9 @@ X Load Mapbox Tiles
 X Load track from external GeoJson (stresa.geojson)
 
 - Load start/finish from external GeoJson (pti.geojson)
+
 X Create Elevation profile using Leaflet.Elevation
+
 - Add scale bar
 - Add title
 - Style track and start/finish
