@@ -102,7 +102,25 @@
     	L.control.scale({
 	position: 'bottomright',
 	imperial: false
-}).addTo(map);
+	}).addTo(map);
+	
+<!--Add info -->	
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    
+    this._div.innerHTML = 
+    '<h4><span class="lgrey">'TEST1':</span>'
+		+ '<span class="rosso"> 'TEST2'</span></h4>' 
+		+ '<p><span class="lgrey">Origine dati:</span>'
+		+ '<span class="rosso"><a href="http://www.lagomaggioretrail.it">Lago Maggiore Trail®</a></span></p>'
+		;
+		
+    return this._div;
+};
+
+info.addTo(map);
     
 
     
