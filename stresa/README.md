@@ -16,7 +16,8 @@ X Load track from external GeoJson (stresa.geojson)
 
 X Create Elevation profile using Leaflet.Elevation
 
-- Add scale bar
+X Add scale bar
+
 - Add title
 - Style track and start/finish
 - Fix popup from opening at page load
