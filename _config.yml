@@ -1,8 +1,8 @@
 ### GENERAL SETTINGS ###
 
 # Site settings
-title: luca moiana
-description: "My personal page for coding projects on gis, webmaps using leafletjs or openlayers"
+title: lucamoiana.
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
 baseurl: ""
 url: "http://yourdomain.com"
 
@@ -38,20 +38,12 @@ social:
     
 # Postal address (add as many lines as necessary). Shown in footer and on Contact page.
 address:
-<<<<<<< HEAD
   - lines: 
     - Some Ave, 987,
     - 23890, New York,
     - United States.
 email: hello@solidtheme.com
 tel: +34 8493-4893
-=======
-  - lines: Monstesacro ,
-    - Rome,
-    - Italy.
-email: luca_moiana@hotmail.com
-skype: lucamoiana
->>>>>>> FETCH_HEAD
 
 
 ### GENERAL DATA FOR VARIOUS LOCATIONS ###
@@ -110,14 +102,7 @@ clients:
 about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
 
 # Testimonial content. Shown on Home and About page. 
-<<<<<<< HEAD
 testimonial:
     message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
     author: Marcel Newman
     position: WEB DESIGNER - BLACKTIE.CO
-=======
-#testimonial:
-#    message: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
-#    author: Marcel Newman
-#    position: WEB DESIGNER - BLACKTIE.CO
->>>>>>> FETCH_HEAD
