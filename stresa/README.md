@@ -18,7 +18,8 @@ X Create Elevation profile using Leaflet.Elevation
 
 X Add scale bar
 
-- Add title
+X Add title
+
 - Style track and start/finish
 - Fix popup from opening at page load
 - Add weather forecast
