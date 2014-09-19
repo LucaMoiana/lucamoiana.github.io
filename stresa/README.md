@@ -23,5 +23,4 @@ X Add title
 - Style track and start/finish
 - Fix popup from opening at page load
 - Add weather forecast
-- Style track
 - Change color/ Style for start and finish
