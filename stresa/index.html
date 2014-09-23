@@ -12,8 +12,8 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <!-- Added for  leaflet.Elevation -->
-    <link rel="stylesheet" href="dist/Leaflet.Elevation-0.0.2.css" />
-    <script type="text/javascript" src="dist/Leaflet.Elevation-0.0.2.min.js"></script>
+    <link rel="stylesheet" href="./dist/Leaflet.Elevation-0.0.2.css" />
+    <script type="text/javascript" src="./dist/Leaflet.Elevation-0.0.2.min.js"></script>
     <!-- Added for icone maki -->
     <!--<script src="Leaflet.MakiMarkers.js"></script>-->
     <!-- JQuery -->
@@ -96,28 +96,35 @@
     });
     el.addTo(map);
     <!--Added track from external geojson -->
-    var myStyle = {
-    "color": "#ff7800",
-    "weight": 5,
-    "opacity": 0.65
+	var exteriorStyle = {
+    "color": "#ffffff",
+    "weight": 0,
+    "opacity": 0.99
 };
     var percorso;
-    $.getJSON("data/stresa.geojson", function(json) {
-        percorso = L.geoJson(json,
-
-
-{
+    $.getJSON("./data/stresa.geojson", function(json) {
+        percorso = L.geoJson(json,{style: exteriorStyle},{
             onEachFeature: el.addData.bind(el) //working on a better solution
-        }).addTo(map);
+        }, ).addTo(map);
     });
     <!-- Create JSON Markers for start and  finish with popup -->
-
+    
      var traguardo;
-    $.getJSON("data/traguardo.geojson", function(json) {
+    $.getJSON("./data/traguardo.geojson", function(json) {
         traguardo = L.geoJson(json,{
-            onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.Name);  
-      }
+    style: {
+        weight: 7,
+        opacity: 1,
+        color: '#0d8709',
+        opacity: 0.7
+    }
+}
+		{
+            onEachFeature: function (feature, layer) 
+			{
+        layer.bindPopup(feature.properties.Name);   {
+    color: '#000'
+}}
         }).addTo(map);
     });
 
