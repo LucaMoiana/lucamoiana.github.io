@@ -105,7 +105,6 @@
     $.getJSON("data/stresa.geojson", function(json) {
         percorso = L.geoJson(json,
 
-	style(mystyle);
 
 {
             onEachFeature: el.addData.bind(el) //working on a better solution
