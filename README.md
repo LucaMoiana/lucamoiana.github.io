@@ -9,6 +9,8 @@ LIST OF PROJECTS:
 
 3-Franciacorta: Create a leafletjs map in Bootleaf, layers will be Comuni (searchable), Historic Land Use (ON/OFF)
 
-4-PLIS: Create a leafletjs map downloading data with import.io from official website
+4-RUGARETO: Create a leafletjs map downloading data with import.io from official website
 
-5-Setup MAPTIME social infrastructure
+5-PLIS: Create a map of all the PLIS in Lombardy
+
+6-Setup MAPTIME social infrastructure
