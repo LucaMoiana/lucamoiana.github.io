@@ -148,7 +148,7 @@ info.onAdd = function (map) {
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
-    this._div.innerHTML = '<h4><span style="text-align:center"><h2>Stresa Night Trail - 2014</h2><br/><h3>Lago Maggiore Trail®</h3></span></h4>';
+    this._div.innerHTML = '<h4><span style="text-align:center"><h2>Stresa Night Trail - 2014</h2><br/><h3>Lago Maggiore Trail®</h3></span></h4><br/><iframe src='http://api.openweathermap.org/data/2.5/weather?id=3178640&mode=html' height='150px' width='150px' frameborder='0'></iframe>';
 };
 
 info.addTo(map);
