@@ -96,9 +96,17 @@
     });
     el.addTo(map);
     <!--Added track from external geojson -->
+    var myStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.65
+};
     var percorso;
     $.getJSON("data/stresa.geojson", function(json) {
         percorso = L.geoJson(json,{
+    style: myStyle
+},
+{
             onEachFeature: el.addData.bind(el) //working on a better solution
         }).addTo(map);
     });
