@@ -103,7 +103,7 @@
 };
     var percorso;
     $.getJSON("./data/stresa.geojson", function(json) {
-        percorso = L.geoJson(json,{style: exteriorStyle},{
+        percorso = L.geoJson(json,{
             onEachFeature: el.addData.bind(el) //working on a better solution
         }, ).addTo(map);
     });
@@ -111,13 +111,7 @@
     
      var traguardo;
     $.getJSON("./data/traguardo.geojson", function(json) {
-        traguardo = L.geoJson(json,{
-    style: {
-        weight: 7,
-        opacity: 1,
-        color: '#0d8709',
-        opacity: 0.7
-    }
+        traguardo = L.geoJson(json,
 }
 		{
             onEachFeature: function (feature, layer) 
