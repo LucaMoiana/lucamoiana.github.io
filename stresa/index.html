@@ -12,8 +12,8 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <!-- Added for  leaflet.Elevation -->
-    <link rel="stylesheet" href="./dist/Leaflet.Elevation-0.0.2.css" />
-    <script type="text/javascript" src="./dist/Leaflet.Elevation-0.0.2.min.js"></script>
+    <link rel="stylesheet" href="dist/Leaflet.Elevation-0.0.2.css" />
+    <script type="text/javascript" src="dist/Leaflet.Elevation-0.0.2.min.js"></script>
     <!-- Added for icone maki -->
     <!--<script src="Leaflet.MakiMarkers.js"></script>-->
     <!-- JQuery -->
@@ -96,29 +96,27 @@
     });
     el.addTo(map);
     <!--Added track from external geojson -->
-	var exteriorStyle = {
-    "color": "#ffffff",
-    "weight": 0,
-    "opacity": 0.99
-};
     var percorso;
-    $.getJSON("./data/stresa.geojson", function(json) {
+    $.getJSON("data/stresa.geojson", function(json) {
         percorso = L.geoJson(json,{
             onEachFeature: el.addData.bind(el) //working on a better solution
-        }, ).addTo(map);
+        }).addTo(map);
     });
     <!-- Create JSON Markers for start and  finish with popup -->
     
+    //L.marker([45.884010493755341, 8.537027388811111]).addTo(map)
+    //    .bindPopup('PARTENZA')
+    //    .openPopup();
+
+    //L.marker([45.885521080344915, 8.536947425454855]).addTo(map)
+    //    .bindPopup('ARRIVO')
+    //    .openPopup();
      var traguardo;
-    $.getJSON("./data/traguardo.geojson", function(json) {
-        traguardo = L.geoJson(json,
-}
-		{
-            onEachFeature: function (feature, layer) 
-			{
-        layer.bindPopup(feature.properties.Name);   {
-    color: '#000'
-}}
+    $.getJSON("data/traguardo.geojson", function(json) {
+        traguardo = L.geoJson(json,{
+            onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.Name);  
+      }
         }).addTo(map);
     });
 
