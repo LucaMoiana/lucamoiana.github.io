@@ -1,152 +1,65 @@
-
-
-<!DOCTYPE html>
-
+<!doctype html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Lucamoiana.github.io by LucaMoiana</title>
 
-<head>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <!-- Leaflet JS -->
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script src="http://d3js.org/d3.v3.min.js"></script>
-    <!-- Added for  leaflet.Elevation -->
-    <link rel="stylesheet" href="dist/Leaflet.Elevation-0.0.2.css" />
-    <script type="text/javascript" src="dist/Leaflet.Elevation-0.0.2.min.js"></script>
-    <!-- Added for icone maki -->
-    <!--<script src="Leaflet.MakiMarkers.js"></script>-->
-    <!-- JQuery -->
-    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- Added fontawesome -->
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Luca Moiana</h1>
+        <p>Environment specialist, GIS expert<br/>
+          Playing with code.
+        </p>
+        <h4>Contacts:</h4>
+        <p><a href="mailto:luca_moiana@hotmail.com?Subject=From%20GitHub" target="_top"><i class="icon-envelope icon-larger"></i> luca_moiana@hotmail.com</a><br/>
+        <a href="skype:profile_name?userinfo"><i class="icon-skype icon-larger"></i> lucamoiana</a>
+		</p>
+		<h4>Connect:</h4>
+     	<p style="margin-right:200px;">
+     	<a href="it.linkedin.com/pub/luca-moiana/3/266/592/"><i class="icon-linkedin icon-larger"></i></a>
+     	<a href="https://github.com/LucaMoiana"><i class="icon-github icon-larger"></i></a>
+     	<a href="https://twitter.com/lucamoiana"><i class="icon-twitter icon-larger"></i></a>
+     	<a href="http://instagram.com/luca_moiana"><i class="icon-instagram icon-larger"></i></a>
+     	</p>
+        </header>
+      <section>
+        <h1>
+<a name="lucamoianagithubio" class="anchor" href="#lucamoianagithubio"><span class="octicon octicon-link"></span></a>MY PROJECTS</h1>
 
-    <!-- Added for omnivore -->
-    <!-- <script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.1.2/leaflet-omnivore.min.js'></script>-->
+<p>Things I’m working on:</p>
 
-    <!-- ACSS for map div -->
-    <style>
-	   html, body, #map {
-	      height:100%;
-	      width:100%;
-	      padding:0px;
-	      margin:0px;
-	   } 
-	   
-	   .info {
-    		padding: 6px 8px;
-    	font: 14px/16px Arial, Helvetica, sans-serif;
-    	background: white;
-    	background: rgba(255,255,255,0.8);
-    	box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    	border-radius: 5px;
-		}
-	.info h4 {
-    	margin: 0 0 5px;
-    	color: #777;
-	}
-	   
-	   
-	</style>
+<ol>
+<li> <a href="http://lucamoiana.github.io/5mdr.html"><b>V Maratona del Rugareto</b></a>: My very first web map, using Mapbox.js and based on <a href="https://www.mapbox.com/mapbox.js/example/v1.0.0/layers/">Toggling layers</a></li>
 
-</head>
+<li> <a href="http://lucamoiana.github.io/stresa/"><b>STRESA</b></a>: Map created using leafletjs, with Elevation profile, title, scalebar, markers and soon distance markers</li>
 
-<body>
+<li> <b>UTLO-2015</b>: The goal is to create a leafletjs map for UTLO2015 with selection of 3 tracks, Elevation profile, title, scalebar, markers and distance markers</li>
 
-    <div id="map"></div>
+<li> <b>Franciacorta</b>: The goal is to build a leafletjs map in Bootleaf with zoom to function and layers control for current and Historic Land Use (ON/OFF)</li>
+
+<li> <b>PLIS</b>: The goal is to create a leafletjs map using web data imported with import.io, and create clusters for Provinces</li>
+
+<li> <b>MapTimeRome</b>: I'm thinking of starting a MapTime in Rome</li>
+</ol>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
     
-
-    <script type="text/javascript">
-
-        
-    <!-- Add MapBox tiles -->
-    
-    var map = new L.Map('map');
-    
-    var url = 'http://{s}.tiles.mapbox.com/v3/lucamoiana.jc4a9gcl/{z}/{x}/{y}.png',
-			attr ='<a href="https://www.mapbox.com/about/maps">&copy; Mapbox</a> <a href="http://openstreetmap.org/copyright">&copy; OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>',
-			service = new L.TileLayer(url, {attribution: attr});
-    
-    <!-- Center map -->    
-    var bounds = new L.LatLngBounds(new L.LatLng(45.8272387362,8.50540004678), new L.LatLng(45.8869498135,8.6038676928));
-
-    map.addLayer(service).fitBounds(bounds);
-        
-    <!--Create an elevation profile using leafletjs.elevation -->
-    //all used options are the default values
-    var el = L.control.elevation({
-        position: "bottomleft",
-        theme: "steelblue-theme", //default: lime-theme
-        width: 600,
-        height: 125,
-        margins: {
-            top: 10,
-            right: 20,
-            bottom: 30,
-            left: 50
-        },
-        useHeightIndicator: true, //if false a marker is drawn at map position
-        interpolation: "linear", //see https://github.com/mbostock/d3/wiki/SVG-Shapes#wiki-area_interpolate
-        hoverNumber: {
-            decimalsX: 3, //decimals on distance (always in km)
-            decimalsY: 0, //deciamls on height (always in m)
-            formatter: undefined //custom formatter function may be injected
-        },
-        xTicks: undefined, //number of ticks in x axis, calculated by default according to width
-        yTicks: undefined, //number of ticks on y axis, calculated by default according to height
-        collapsed: false    //collapsed mode, show chart on click or mouseover
-    });
-    el.addTo(map);
-    <!--Added track from external geojson -->
-    var percorso;
-    $.getJSON("data/stresa.geojson", function(json) {
-        percorso = L.geoJson(json,{
-            onEachFeature: el.addData.bind(el) //working on a better solution
-        }).addTo(map);
-    });
-    <!-- Create JSON Markers for start and  finish with popup -->
-    
-     var traguardo;
-    $.getJSON("data/traguardo.geojson", function(json) {
-        traguardo = L.geoJson(json,{
-            onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.Name);  
-      }
-        }).addTo(map);
-    });
-
-
-    
-
-    <!--Add scalebar -->
-    	L.control.scale({
-	position: 'bottomright',
-	imperial: false
-	}).addTo(map);
-	
-<!--Add info -->	
-    	var info = L.control();
-
-info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
-    this.update();
-    return this._div;
-};
-
-// method that we will use to update the control based on feature properties passed
-info.update = function (props) {
-    this._div.innerHTML = '<h4><span style="text-align:center"><h2>Stresa Night Trail - 2014</h2><br/><h3>Lago Maggiore Trail®</h3></span></h4>';
-};
-
-info.addTo(map);
-
-    
-</script>
-
-
-
-    
-
-    </script>
-
-</body>
-
+  </body>
 </html>
