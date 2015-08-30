@@ -5,29 +5,36 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2015-08-26T19:46:28-00:00</lastmod>
+<lastmod>2015-08-30T16:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2015-08-26T19:46:28-00:00</lastmod>
+<lastmod>2015-08-30T16:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2015-08-26T19:46:28-00:00</lastmod>
+<lastmod>2015-08-30T16:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2015-08-26T19:46:28-00:00</lastmod>
+<lastmod>2015-08-30T16:51:57-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/starting-my-next-project.html</loc>
+<lastmod>2014-08-30T18:32:00+02:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
@@ -376,7 +383,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/fossg4.html</loc>
-<lastmod>2014-02-07T18:32:00+00:50</lastmod>
+<lastmod>2014-08-30T18:32:00+00:50</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -403,6 +410,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/open-source.html</loc>
+<lastmod>2014-02-07T18:32:00+00:50</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>/tag/qgis.html</loc>
 <lastmod>2014-02-07T18:32:00+00:50</lastmod>
 <changefreq>daily</changefreq>
@@ -410,15 +424,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/tag/lizmap.html</loc>
-<lastmod>2014-02-07T18:32:00+00:50</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>/tag/open-source.html</loc>
-<lastmod>2014-02-07T18:32:00+00:50</lastmod>
+<loc>/tag/javascript.html</loc>
+<lastmod>2014-08-30T18:32:00+00:50</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -431,8 +438,29 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>/author/luca-moiana.html</loc>
+<loc>/tag/webmap.html</loc>
+<lastmod>2014-08-30T18:32:00+00:50</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/lizmap.html</loc>
 <lastmod>2014-02-07T18:32:00+00:50</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/tag/birds.html</loc>
+<lastmod>2014-08-30T18:32:00+00:50</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>/author/luca-moiana.html</loc>
+<lastmod>2014-08-30T18:32:00+00:50</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
