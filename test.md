@@ -9,7 +9,7 @@ Summary: Use Pelican assets plugin to improve your website load speed
 
 Lorem ipsum dolor sit amet, ei semper sadipscing ius, ei quo nisl quando facilisi. Has id vero inani, per eu vidit albucius incorrupte, ex debet adolescens constituto sed. Ius id populo consulatu, ignota dicunt suavitate mea ex, ea sed intellegam quaerendum dissentiet. Ex his iusto efficiantur. An cibo detracto inciderint vel, eos et iusto assentior voluptaria, ius unum nostro verterem et. Ipsum eirmod reprimique sea eu, sint mutat ei vim.
 
-	#!javascript	
+	:::javascript	
 	  <script>
 	      var id={};
 			for (var i = 0; i < NIDI.features.length; i++){
