@@ -96,60 +96,58 @@ In order to ssh from the terminale, you want to highlight the instance in AWS co
 <p>ec2-54-xxx-xx-xx.eu-west-1.compute.amazonaws.com</p>
 <p>Now that you now where to ssh, don’t wait and open the terminal!
 navigate to the folder with .pem file</p>
-<blockquote>
-cd Dcuments\ec2</blockquote>
+<div class="highlight"><pre>cd Dcuments\\ec2
+</pre></div>
 <p>before using .pem file you need to change file permission using this command</p>
-<blockquote>
-chmod -R 700 GeoServerTest.pem</blockquote>
+<div class="highlight"><pre>chmod -R 700 GeoServerTest.pem
+</pre></div>
 <p>[REFERENCE]</p>
 <p>Now you can finally ssh into your instance typing:</p>
-<blockquote>
-ssh -i Geoserver5.pem <a class="reference external" href="mailto:ubuntu&#64;ec2-54-194-39-18.eu-west-1.compute.amazonaws.com">ubuntu&#64;ec2-54-194-39-18.eu-west-1.compute.amazonaws.com</a></blockquote>
+<div class="highlight"><pre>ssh -i Geoserver5.pem ubuntu@ec2-54-194-39-18.eu-west-1.compute.amazonaws.com
+</pre></div>
 <p>and then you wanna make sure everything is up to date typing:</p>
-<blockquote>
-sudo apt-get update</blockquote>
+<div class="highlight"><pre>sudo apt-get update
+</pre></div>
 <p>Then you need all the pretty little thing that make run on a server, so go ahead and type:</p>
-<blockquote>
-apt-get install apache2 php5 curl php5-curl php5-sqlite php5-gd</blockquote>
+<div class="highlight"><pre>apt-get install apache2 php5 curl php5-curl php5-sqlite php5-gd
+</pre></div>
 <p>It’s now time for the first test, go to your browser and enter your instance address:</p>
-<blockquote>
-ec2-54-XXX-XX-XX.eu-west-1.compute.amazonaws.com</blockquote>
+<p>ec2-54-XXX-XX-XX.eu-west-1.compute.amazonaws.com</p>
 <p>The answer should be pretty straightforward:
 It works!</p>
 <p>To install the sweet GIS pieces, you need to add a repository, with this line:</p>
-<blockquote>
-sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable</blockquote>
+<div class="highlight"><pre>sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+</pre></div>
 <p>After that you can update:</p>
-<blockquote>
-sudo apt-get update</blockquote>
+<div class="highlight"><pre>sudo apt-get update
+</pre></div>
 <p>And install qgis on the server:</p>
-<blockquote>
-sudo apt-get install qgis</blockquote>
+<div class="highlight"><pre>sudo apt-get install qgis
+</pre></div>
 <p>And then the map-server:</p>
-<blockquote>
-sudo apt-get install qgis-mapserver libapache2-mod-fcgid</blockquote>
+<div class="highlight"><pre>sudo apt-get install qgis-mapserver libapache2-mod-fcgid
+</pre></div>
 <p>Now we need to move to the var/www folder to install the lizmap-web-client</p>
-<blockquote>
-MYAPP=lizmap-web-client
+<div class="highlight"><pre>MYAPP=lizmap-web-client
 VERSION=2.9
-wget <a class="reference external" href="https://github.com/3liz/lizmap-web-client/archive/$VERSION.zip">https://github.com/3liz/lizmap-web-client/archive/$VERSION.zip</a></blockquote>
+wget https://github.com/3liz/lizmap-web-client/archive/$VERSION.zip
+</pre></div>
 <p>Ok, now we need to unzip the file and so…we need to install unzip capabilities to the server:</p>
-<blockquote>
-sudo apt-get install unzip</blockquote>
+<div class="highlight"><pre>sudo apt-get install unzip
+</pre></div>
 <p>Unzip the software:</p>
-<blockquote>
-unzip $VERSION.zip</blockquote>
+<div class="highlight"><pre>unzip $VERSION.zip
+</pre></div>
 <p>Delete the temporary archive:</p>
-<blockquote>
-rm $VERSION.zip</blockquote>
+<div class="highlight"><pre>rm $VERSION.zip
+</pre></div>
 <p>and move deep into the client folder:</p>
-<blockquote>
-cd /var/www/$MYAPP-$VERSION
+<div class="highlight"><pre>cd /var/www/$MYAPP-$VERSION
 chown :www-data temp/ lizmap/var/ lizmap/www lizmap/install/qgis/edition/ -R
-chmod 775 temp/ lizmap/var/ lizmap/install/qgis/edition/ -R</blockquote>
+chmod 775 temp/ lizmap/var/ lizmap/install/qgis/edition/ -R
+</pre></div>
 <p>Now you can type in your browser address bar :</p>
-<blockquote>
-<a class="reference external" href="http://ec2-54-XXX-XX-XX.eu-west-1.compute.amazonaws.com/lizmap-web-client-2.9/lizmap/www/">http://ec2-54-XXX-XX-XX.eu-west-1.compute.amazonaws.com/lizmap-web-client-2.9/lizmap/www/</a></blockquote>
+<p><a class="reference external" href="http://ec2-54-XXX-XX-XX.eu-west-1.compute.amazonaws.com/lizmap-web-client-2.9/lizmap/www/">http://ec2-54-XXX-XX-XX.eu-west-1.compute.amazonaws.com/lizmap-web-client-2.9/lizmap/www/</a></p>
 <p>and see the example page.</p>
 <p>[REFERENCE]</p>
 <p>Assuming you created a map on QGIS and then prepared the necessary files using LizMap, you are now ready to publish a map.</p>
@@ -160,25 +158,17 @@ Create a new connection, enter the server public DNS, use ubuntu as user, select
 [REFERENCE]</p>
 <p>You may think that this is it but, if you try and upload the map files, you’ll get a permission error.
 Enter the terminal and ssh into the running instance, create a folder to host the files:</p>
-<blockquote>
-mkdir var/www/maps</blockquote>
+<div class="highlight"><pre>mkdir var/www/maps
+</pre></div>
 <p>Take care of the permissions:</p>
-<blockquote>
-sudo chown ubuntu:ubuntu /var/www/maps</blockquote>
+<div class="highlight"><pre>sudo chown ubuntu:ubuntu /var/www/maps
+</pre></div>
 <p>this will allow Filezilla to transfer files.
 [REFERENCE]</p>
 
             
             
             <hr/>
-            <aside>
-            <nav>
-            <ul class="articles-timeline">
-                <li class="previous-article">« <a href="/farewell.html" title="Previous: Farewell">Farewell</a></li>
-                <li class="next-article"><a href="/starting-my-next-project.html" title="Next: Starting my next project">Starting my next project</a> »</li>
-            </ul>
-            </nav>
-            </aside>
         </div>
         <section>
         <div class="span2" style="float:right;font-size:0.9em;">
