@@ -292,34 +292,37 @@ i.sidebar-social-links:hover {
     color: #fff;
 }
 i.fa-twitter:hover, i.fa-twitter-square:hover {
-    background-color: #00ACED;
+    background-color: #2196f3;
 }
 i.fa-facebook:hover, i.fa-facebook-square:hover {
-    background-color: #3B5998;
+    background-color: #2196f3;
 }
 i.fa-google-plus:hover, i.fa-google-plus-square:hover {
-    background-color: #D34836;
+    background-color: #2196f3;
 }
 i.fa-adn:hover {
-    background-color: #49484D;
+    background-color: #2196f3;
 }
 i.fa-envelope:hover {
-    background-color: #5E9EDA;
+    background-color: #2196f3;
 }
 i.fa-github:hover, i.fa-github-square:hover, i.fa-github-alt:hover {
-    background-color: #000;
+    background-color: #2196f3;
 }
 i.fa-flickr:hover {
-    background-color: #FF0084;
+    background-color: #2196f3;
 }
 i.fa-youtube:hover, i.fa-youtube-square:hover, i.fa-youtube-play:hover {
-    background-color: #BC272F;
+    background-color: #2196f3;
 }
 i.fa-linkedin:hover, i.fa-linkedin-square:hover {
-    background-color: #107FB9;
+    background-color: #2196f3;
+}
+i.fa-skype:hover, i.fa-fa-skype:hover {
+    background-color: #2196f3;
 }
 i.fa-gittip:hover {
-    background-color: #663300;
+    background-color: #2196f3;
 }
 i.fa-rss:hover, i.fa-rss-square:hover {
     background-color: #FF6600;
@@ -603,4 +606,3 @@ div.figure.align-left, .article-content img.align-left {
     float: left;
     margin-right: 1.5em;
 }
-
